@@ -197,7 +197,7 @@ const Header = () => {
                   href="/about"
                   className="st-btn st-style1 st-color1 st-smooth-move"
                 >
-                  Get About
+                  Get About Section
                 </Link>
               </div>
               <div className="wrapper">
