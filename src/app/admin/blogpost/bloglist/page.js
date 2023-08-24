@@ -12,7 +12,7 @@ const Page =  () => {
   // function getToken() {
   //   return localStorage.getItem('accessToken');
   // }
-  // const token = getToken();
+  // const token = getToken(); 
   // console.log(token);
 
   // if (!token) {
@@ -72,40 +72,7 @@ const handleDelete = (id) => {
       }
 };
 
-  // const Blog = [
-  //  {
-  //     id: 1,
-  //     url: "https://images.unsplash.com/photo-1691394790591-b1ce2093b045?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  //     title: "The Pillars of Islam: A Comprehensive Guide to the Five Foundations of Faith",
-  //     des: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose",
-  //     author: "mokhter ahmad",
-  //     date: "12-12-2022",
-  //   },
-  //   {
-  //     id: 2,
-  //     url: "https://images.unsplash.com/photo-1691394790591-b1ce2093b045?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  //     title: "The Pillars of Islam: A Comprehensive Guide to the Five Foundations of Faith",
-  //     des: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose",
-  //     author: "mokhter ahmad",
-  //     date: "12-12-2022",
-  //   },
-  //   {
-  //     id: 3,
-  //     url: "https://images.unsplash.com/photo-1691394790591-b1ce2093b045?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  //     title: "The Pillars of Islam: A Comprehensive Guide to the Five Foundations of Faith",
-  //     des: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose",
-  //     author: "mokhter ahmad",
-  //     date: "12-12-2022",
-  //   },
-  //   {
-  //     id: 4,
-  //     url: "https://images.unsplash.com/photo-1691394790591-b1ce2093b045?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  //     title: "The Pillars of Islam: A Comprehensive Guide to the Five Foundations of Faith",
-  //     des: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose",
-  //     author: "mokhter ahmad",
-  //     date: "12-12-2022",
-  //   },
-  // ];
+ 
 
   return (
     <section className="container">
