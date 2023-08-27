@@ -15,7 +15,7 @@ const Activities = () => {
       {/* <!-- Iconbox Container --> */}
 
       <div className="container px-5 lg:px-0">
-        <div className="grid xl:grid-cols-3 xl:px-0 lg:grid-cols-3 lg:px-16 md:grid-cols-2 md:px-16 sm:grid-cols-1 sm:px-16 gap-5">
+        <div className="grid xl:grid-cols-3 xl:px-0 lg:grid-cols-3 lg:px-16 md:grid-cols-2 md:px-16 grid-cols-2 sm:px-16 gap-5">
           <div className="">
             <div className="st-iconbox st-style1">
               <div className="st-iconbox-icon">

@@ -24,29 +24,7 @@ const Blogs = () => {
 
   console.log(Blog);
 
-  // const res = [
-  //   {
-  //     id: 1,
-  //     title: "Exploring the Essence of Islamic Spirituality",
-  //     url: quran1,
-  //     author: "mokhter ahmad",
-  //     date: "12-12-2022",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "A Journey of Faith and Enlightenment",
-  //     url: quran2,
-  //     author: "mokhter ahmad",
-  //     date: "12-12-2022",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Understanding the Principles of Islamic Belief",
-  //     url: quran3,
-  //     author: "mokhter ahmad",
-  //     date: "12-12-2022",
-  //   },
-  // ];
+ const slicedBlogs = Blog.slice(-3);
 
   return (
     <section className="container">
@@ -62,7 +40,7 @@ const Blogs = () => {
       {/* <!-- Latest News Container --> */}
         <div className="px-5 lg:px-0">
       <div className="md:grid grid-cols-2 lg:grid-cols-3 gap-4">
-        {Blog.map((post) => (
+        {slicedBlogs.map((post) => (
           <div className=" " key={post.id}>
             <Link href={`/blog/${post._id}`}>
                 <div className="st-post-thumb st-zoom">

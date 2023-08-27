@@ -23,7 +23,7 @@ const lecture = () => {
           consectetur adipisicing elit.
         </p>
         <div className="container lg:px-24 md:px-24 sm:px-12">
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-3 ">
+          <div className="grid  lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-3 gap-3 ">
             <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
               #Lectures
             </span>

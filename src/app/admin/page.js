@@ -1,9 +1,10 @@
 "use client"
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ProgramList from "./program/page";
 import { redirect } from "next/navigation";
 import { useSession, signIn, signOut } from "next-auth/react"
+import axios from 'axios';
 
 const Page = () => {
   
@@ -19,7 +20,67 @@ const Page = () => {
   //   }
   // })
 
-  
+  const [Program, setProgram] = useState([]);
+  const [Consultancy, setConsultancy] = useState([]);
+  const [Event, setEvent] = useState([]);
+  const [Lecture, setLecture] = useState([]);
+  const [Blog, setBlog] = useState([]);
+  const [Contact, setContact] = useState([]);
+  const [Podcast, setPodcast] = useState([]);
+  const [Gallery, setGallery] = useState([]);
+  const [Book, setBook] = useState([]);
+
+
+  const fetchdata =  () => {
+  const getProgram =  'https://test.mashqulquran.com/program'
+  const getConsultancy =  'https://test.mashqulquran.com/consultancy'
+  const getEvent =  'https://test.mashqulquran.com/event'
+  const getLecture =  'https://test.mashqulquran.com/lecture'
+  const getBlog =  'https://test.mashqulquran.com/blog'
+  const getContact =  'https://test.mashqulquran.com/contact'
+  const getPodcast =  'https://test.mashqulquran.com/podcast'
+  const getGallery =  'https://test.mashqulquran.com/gallery'
+  const getBook =  'https://test.mashqulquran.com/book'
+
+  const apiProgram = axios.get(getProgram)
+  const apiConsultancy = axios.get(getConsultancy)
+  const apiEvent = axios.get(getEvent)
+  const apiLecture = axios.get(getLecture)
+  const apiBlog = axios.get(getBlog)
+  const apiContact = axios.get(getContact)
+  const apiPodcast = axios.get(getPodcast)
+  const apiGallery = axios.get(getGallery)
+  const apiBook = axios.get(getBook)
+
+  axios.all([apiProgram, apiConsultancy, apiEvent, apiLecture, apiBlog, apiContact, apiPodcast, apiGallery, apiBook]).then(
+    axios.spread((...alldata ) => {
+      const program = alldata[0].data.length
+      const consultancy = alldata[1].data.length
+      const event = alldata[2].data.length
+      const lecture = alldata[3].data.length
+      const blog = alldata[4].data.length
+      const contact = alldata[5].data.length
+      const podcast = alldata[6].data.length
+      const gallery = alldata[7].data.length
+      const book = alldata[8].data.length
+
+      setProgram(program)
+      setConsultancy(consultancy)
+      setEvent(event)
+      setLecture(lecture)
+      setBlog(blog)
+      setContact(contact)
+      setPodcast(podcast)
+      setGallery(gallery)
+      setBook(book)
+
+    })
+  ) }
+
+  useEffect(() => {
+     fetchdata();
+  }, [])
+
 
   return (
     <section className="container">
@@ -35,9 +96,9 @@ const Page = () => {
       <div className="grid grid-cols-3 gap-2 px-5">
         <div className="bg-[#0a1e3b] p-3 mx-5 my-2 rounded-lg">
           <p className="text-center text-xl font-normal text-slate-200">
-            Program Length
+            Program Length 
           </p>
-          <h4 className="text-[#fec544] text-center text-5xl">30</h4>
+          <h4 className="text-[#fec544] text-center text-5xl">{Program}</h4>
           <Link href="/admin/program" target="_blank">
             <p className="bg-[#fec544] py-2 px-1 rounded-lg text-gray-900 text-center text-xl font-medium">
               Program List
@@ -53,7 +114,7 @@ const Page = () => {
           <p className="text-center text-xl font-normal text-slate-200">
             Blog Length
           </p>
-          <h4 className="text-[#fec544] text-center text-5xl">30</h4>
+          <h4 className="text-[#fec544] text-center text-5xl">{Blog}</h4>
           <Link href="admin/blogpost/bloglist" target="_blank">
             <p className="bg-[#fec544] py-2 px-1 rounded-lg text-gray-900 text-center text-xl font-medium">
               Blog List
@@ -69,7 +130,7 @@ const Page = () => {
           <p className="text-center text-xl font-normal text-slate-200">
             Lecture Length
           </p>
-          <h4 className="text-[#fec544] text-center text-5xl">30</h4>
+          <h4 className="text-[#fec544] text-center text-5xl">{Lecture}</h4>
           <Link href="/admin/lecture/lecturelist" target="_blank">
             <p className="bg-[#fec544] py-2 px-1 rounded-lg text-gray-900 text-center text-xl font-medium">
               Lecture List
@@ -85,7 +146,7 @@ const Page = () => {
           <p className="text-center text-xl font-normal text-slate-200">
             Event Length
           </p>
-          <h4 className="text-[#fec544] text-center text-5xl">30</h4>
+          <h4 className="text-[#fec544] text-center text-5xl">{Event}</h4>
           <Link href="/admin/event/eventlist" target="_blank">
             <p className="bg-[#fec544] py-2 px-1 rounded-lg text-gray-900 text-center text-xl font-medium">
               Event List
@@ -101,7 +162,7 @@ const Page = () => {
           <p className="text-center text-xl font-normal text-slate-200">
             Consultancy Length
           </p>
-          <h4 className="text-[#fec544] text-center text-5xl">30</h4>
+          <h4 className="text-[#fec544] text-center text-5xl">{Consultancy}</h4>
           <Link href="/admin/consultancy/consultancylist" target="_blank">
             <p className="bg-[#fec544] py-2 px-1 rounded-lg text-gray-900 text-center text-xl font-medium">
               Consultancy List
@@ -117,7 +178,7 @@ const Page = () => {
           <p className="text-center text-xl font-normal text-slate-200">
             Contact Length
           </p>
-          <h4 className="text-[#fec544] text-center text-5xl">30</h4>
+          <h4 className="text-[#fec544] text-center text-5xl">{Contact}</h4>
           <Link href="/admin/contacts/contactlist" target="_blank">
             <p className="bg-[#fec544] py-2 px-1 rounded-lg text-gray-900 text-center text-xl font-medium">
               Contact List
@@ -133,7 +194,7 @@ const Page = () => {
           <p className="text-center text-xl font-normal text-slate-200">
            Podcast Length
           </p>
-          <h4 className="text-[#fec544] text-center text-5xl">30</h4>
+          <h4 className="text-[#fec544] text-center text-5xl">{Podcast}</h4>
           <Link href="/admin/podcast/podcastlist" target="_blank">
             <p className="bg-[#fec544] py-2 px-1 rounded-lg text-gray-900 text-center text-xl font-medium">
             Podcast List
@@ -149,7 +210,7 @@ const Page = () => {
           <p className="text-center text-xl font-normal text-slate-200">
              Gallery Length
           </p>
-          <h4 className="text-[#fec544] text-center text-5xl">30</h4>
+          <h4 className="text-[#fec544] text-center text-5xl">{Gallery}</h4>
           <Link href="/admin/gallery/gallerylist" target="_blank">
             <p className="bg-[#fec544] py-2 px-1 rounded-lg text-gray-900 text-center text-xl font-medium">
             Gallery List
@@ -165,7 +226,7 @@ const Page = () => {
           <p className="text-center text-xl font-normal text-slate-200">
              Book Length
           </p>
-          <h4 className="text-[#fec544] text-center text-5xl">30</h4>
+          <h4 className="text-[#fec544] text-center text-5xl">{Book}</h4>
           <Link href="/admin/book/booklist" target="_blank">
             <p className="bg-[#fec544] py-2 px-1 rounded-lg text-gray-900 text-center text-xl font-medium">
               Book List

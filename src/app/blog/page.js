@@ -23,41 +23,7 @@ const Page =  () => {
 
   console.log(Blog);
 
-
-  // const res = [
-  //   {
-  //     id: 1,
-  //     title:
-  //       "Exploring the Essence of Islamic Spirituality: Insights and Reflections",
-  //     url: quran1,
-  //     author: "mokhter ahmad",
-  //     date: "12-12-2022",
-  //   },
-  //   {
-  //     id: 2,
-  //     title:
-  //       "Unveiling the Beauty of Islam: A Journey of Faith and Enlightenment",
-  //     url: quran2,
-  //     author: "mokhter ahmad",
-  //     date: "12-12-2022",
-  //   },
-  //   {
-  //     id: 3,
-  //     title:
-  //       "The Path of Submission: Understanding the Principles of Islamic Belief",
-  //     url: quran3,
-  //     author: "mokhter ahmad",
-  //     date: "12-12-2022",
-  //   },
-  //   {
-  //     id: 4,
-  //     title:
-  //       "The Pillars of Islam: A Comprehensive Guide to the Five Foundations of Faith",
-  //     url: quran3,
-  //     author: "mokhter ahmad",
-  //     date: "12-12-2022",
-  //   },
-  // ];
+  
 
   return (
     <section id="blog">

@@ -25,6 +25,8 @@ const Lecture = () => {
   
     console.log(Lecture);
 
+    const slicedLecture = Lecture.slice(-6);
+
   return (
     <div className="py-8">
       {/* start Title */}
@@ -71,7 +73,7 @@ const Lecture = () => {
 
      <div className="container lg:px-24 lg:py-8  md:px-24 md:py-8  px-24 py-8">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-3">
-        {Lecture.map((lecture) => (
+        {slicedLecture.map((lecture) => (
           <div className="border border-[#000]   bg-slate-800" key={lecture._id}>
             <Plyr
               source={{

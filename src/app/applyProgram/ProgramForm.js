@@ -1,14 +1,14 @@
 "use client";
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
+const MAX_STEPS = 3
 
 const ProgramForm = () => {
 
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset,  watch, formState: { errors, isValid }} = useForm({ mode: "all" });
 
   const onSubmit = data => {
 
@@ -61,9 +61,93 @@ const ProgramForm = () => {
 };
 
 
+const [formStep, setFormStep] = useState(0)
+const handleStepCompletion = () => {
+  isValid && setFormStep(cur => cur + 1)
+}
+
+
+const renderButtons = () => {
+   if (formStep > 2) {
+      return undefined
+   } else if (formStep === 2) {
+         return(
+            <button
+                disabled={!isValid}
+                onClick={formStep === 2 ? undefined : handleStepCompletion}
+                type={formStep === 2 ? "submit" : "button"}
+                className="st-btn st-style1 st-color1 disabled:bg-gray-400">
+                Apply Program
+              </button>
+         )
+   } else {
+      return(
+         <button
+             disabled={!isValid}
+             onClick={formStep === 3 ? undefined : handleStepCompletion}
+             type={formStep === 3 ? "submit" : "button"}
+             className="st-btn st-style1 st-color1 disabled:bg-gray-400" >
+             Next
+           </button>
+      )
+   }
+}
+
+
+
   return (
     <div>
+        
+
+        {formStep < 3 && (
+          <div className="h-2 w-full bg-gray-200">
+            <div
+              style={{ width: `${((formStep + 1) / MAX_STEPS) * 100}%` }}
+              className="h-full bg-yellow-400"
+            ></div>
+          </div>
+        )}
+        <div className="px-16 py-10">
+          {formStep < 3 && (
+            <div
+              className={`flex ${
+                formStep === 0 ? "justify-end" : "justify-between"
+              } items-center mb-6 font-medium text-sm`}
+            >
+              {formStep > 0 && (
+                <button
+                  onClick={() => setFormStep(cur => cur - 1)}
+                  className="flex items-center text-gray-400 hover:text-gray-500 focus:outline-none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    className="w-5 mr-2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                  Previous
+                </button>
+              )}
+              <p className="">
+                Step {formStep + 1} of {MAX_STEPS}
+              </p>
+            </div>
+          )}
+
        <form onSubmit={handleSubmit(onSubmit)} action="#" method="POST" className="st-contact-form" id="contact-form">
+               
+               {/* ==========00000000000000======== */}
+
+               {formStep >= 0 && (
+              <section className={formStep === 0 ? "block" : "hidden"}>
 
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter Program Title </label>
@@ -112,6 +196,13 @@ const ProgramForm = () => {
                  <input  type="text"{...register("placeName" , { required: true })} />
                  {errors.placeName && <p className='text-red'>place name is required.</p>}
               </div>
+
+              </section>
+            )}
+              {/* ============1111111111111111============ */}
+
+              {formStep >= 1 && (
+              <section className={formStep === 1 ? "block" : "hidden"}>
                      
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter Post Office Name</label>
@@ -161,6 +252,14 @@ const ProgramForm = () => {
                  {errors.presidentsName && <p className='text-red'>presidents Name is required.</p>}
               </div>
 
+              </section>
+            )}
+
+              {/* =================222222222222=================== */}
+
+              {formStep >= 2 && (
+              <section className={formStep === 2 ? "block" : "hidden"}>
+
               <div className="st-form-field">
                  <label className="ml-3" for="">Enter Presidents Mobile Number</label>
                  <input  type="text"{...register("presidentsNumber" , { required: true })} />
@@ -195,10 +294,30 @@ const ProgramForm = () => {
                  <label className="ml-3" for="">Enter Guests of tha Last Program </label>
                  <input  type="date"{...register("lastProgramGguests" , { required: true })} />
                  {errors.lastProgramGguests && <p className='text-red'>last program guests is required.</p>}
-              </div>                       
+              </div>     
 
-              <button className="st-btn st-style1 st-color1" type="submit" id="submit" name="submit">Apply Program</button>
+              </section>
+            )}
+
+            
+              {/* ==========33333333333333333==============    */}
+
+              {formStep >= 3 && (
+              <section>
+                <h2 className="font-semibold text-3xl mb-8">
+                  Thank you for submit!
+                </h2>
+              </section>
+            )}
+
+            {/* ================Final========    */}
+
+               {renderButtons()}
+          
+
             </form>
+
+            </div>  
     </div>
   )
 }

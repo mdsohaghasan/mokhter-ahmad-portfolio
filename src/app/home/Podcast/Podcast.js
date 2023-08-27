@@ -6,6 +6,9 @@ import title from "./title.png";
 import btnPart from "./btn-part.png";
 import Link from "next/link";
 
+
+
+
 // Ripple Water Effect .....
 // import { useEffect } from "react";
 // import $ from "jquery";
@@ -40,7 +43,9 @@ const Podcast = () => {
 
   console.log(Podcast);
 
+  const slicedPodcast = Podcast.slice(-8);
 
+ 
 
   return (
     <section id="podcast">
@@ -51,8 +56,8 @@ const Podcast = () => {
             <div className="title">
               <Image src={title} alt="play" />
             </div>
-            <div className="podcastButton grid lg:grid-cols-2 md:grid-cols-2 gap-3 ms-20 mr-16 py-2">
-            {Podcast.map((podcast) => (
+            <div className="podcastButton grid grid-cols-2 gap-3 ms-20 mr-16 py-2">  
+            {slicedPodcast.map((podcast) => (
               <div className="bg-gradient-to-b from-[#333333] to-[#000000]  rounded flex justify-start items-center" key={podcast._id}>
                 <i className="bi bi-play-fill text-3xl ms-3"></i>
                 <Image src={btnPart} alt="btn" className="part mx-3"></Image>
