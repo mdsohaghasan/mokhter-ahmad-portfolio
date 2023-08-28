@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { revalidateTag } from 'next/cache'
 
 const Page =  () => {
 

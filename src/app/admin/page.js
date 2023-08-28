@@ -73,7 +73,6 @@ const Page = () => {
       setPodcast(podcast)
       setGallery(gallery)
       setBook(book)
-
     })
   ) }
 
