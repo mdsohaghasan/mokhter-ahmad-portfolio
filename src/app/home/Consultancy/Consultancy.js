@@ -16,17 +16,17 @@ const Consultancy = () => {
       </div>
       {/* end Titie  */}
 
-      <div className="container px-5 lg:px-0">
-        <div className="lg:flex lg:items-center	">
-          <div className="lg:w-1/2">
-            <div className="sm:text-center  lg:text-left ">
-              <h1>Sharīah Consultency</h1>
+      <div className="container px-8 ">
+        <div className="lg:flex lg:items-center md:flex md:items-center	">
+          <div className="md:w-1/2 lg:w-1/2">
+            <div className="  lg:text-left ">
+              <h1 className="text-4xl py-3">Sharīah Consultency</h1>
             </div>
             <div className="my-3">
-              <span className="border border-[#000] rounded-2xl py-1 px-3  text-center mr-4">
+              <span className="border border-white rounded-3xl py-2 px-3  text-center mr-4">
                 Sharīah Prescription
               </span>
-              <span className="border border-[#000] rounded-2xl py-1 px-3  text-center ">
+              <span className="border border-white rounded-3xl py-2 px-3  text-center ">
                 Family Consultancy
               </span>
             </div>
@@ -53,7 +53,7 @@ const Consultancy = () => {
               </Link>
             </div>
           </div>
-          <div className="lg:w-1/2">
+          <div className="md:w-1/2 lg:w-1/2">
             <Image src={photo} alt="Consultancy"></Image>
           </div>
         </div>

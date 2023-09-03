@@ -17,35 +17,32 @@ const lecture = () => {
       {/* End Title */}
       <div className="container px-24">
         <p className="text-center py-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
-          amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit.
+        Welcome to Professor Mokhter Ahmads Video Lecture Page on Islamic Spirituality. Explore profound insights into the world of Islamic spirituality through engaging video lectures. Join us on a transformative exploration of spiritual practices, teachings, and contemplative reflections rooted in the rich Islamic tradition. Discover new perspectives that inspire a deeper connection with your faith and a greater understanding of the spiritual path.
         </p>
         <div className="container lg:px-24 md:px-24 sm:px-12">
-          <div className="grid  lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-3 gap-3 ">
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+          <div className="grid grid-cols-2  lg:grid-cols-4 md:grid-cols-2  gap-3 ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #Lectures
             </span>
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #Halaqah
             </span>
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #Hajj&Omrah
             </span>
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #Mahfil
             </span>
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #JummaKhutba
             </span>
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #Podcast
             </span>
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #Seminer
             </span>
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #Nasihah
             </span>
           </div>
@@ -56,10 +53,7 @@ const lecture = () => {
 
       <div className="container lg:px-32">
         <div className="py-3 px-6 bg-slate-800 flex items-center justify-between rounded-xl">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit.
-          </p>
+          <p>  Embark on a journey of intellectual exchange and meaningful discussions as we gather to explore the diverse facets of Islam.</p>
           <div className="st-hero-btn">
             <Link
               href="/applyProgram"

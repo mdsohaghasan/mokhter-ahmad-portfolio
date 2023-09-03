@@ -36,7 +36,7 @@ const Page =  () => {
         <div className="st-height-b25 st-height-lg-b25"></div>
       </div>
 
-      <div className="lg:flex container gap-8">
+      <div className="lg:flex container gap-8 p-8">
         <div className="lg:basis-3/4  ">
           <div className="grid md:grid-cols-2 gap-8 ">
             {Blog.map((post) => (

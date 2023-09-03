@@ -25,7 +25,8 @@ const Page =  () => {
 
   useEffect(() => {
     const url = `https://test.mashqulquran.com/blog`;
-    fetch(url, {
+    fetch(url,  {
+      next:{ revalidate: 10 },
       // headers: {
       //   authorization: `Bearer ${token}`,
       // },

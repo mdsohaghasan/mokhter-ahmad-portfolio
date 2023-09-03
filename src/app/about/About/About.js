@@ -19,10 +19,10 @@ const About = () => {
         </div>
         <div className="st-height-b25 st-height-lg-b25"></div>
       </div>
-      <div className="container py-12">
-        <div className="row">
-          <div className="col-lg-6 wow fadeInLeft">
-            <div className="st-about-img-wrap  aboutImg">
+      <div className="container p-5 md:p-8 lg:p-12 ">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 justify-center	">
+          <div className=" wow fadeInLeft">
+            <div className="st-about-img-wrap  aboutImg p-5">
               <Image
                 className="st-about-img st-dynamic-bg st-bg grayscale hover:grayscale-0 over:blur"
                 src={photo}
@@ -32,14 +32,12 @@ const About = () => {
             </div>
             <div className="st-height-b0 st-height-lg-b30"></div>
           </div>
-          <div className="col-lg-6">
             <div className="st-vertical-middle">
               <div className="st-vertical-middle-in">
                 <div className="st-text-block st-style1">
                   <h2 className={`text-4xl  ${myFont2.className}`}>
                     Torch Bearer of the Quran In The Land of Bengal
                   </h2>
-
                   <div className="st-text-block-text ">
                     <p className="text-justify italic py-4">
                       As ignorance & innovation in the name of religion spread
@@ -81,10 +79,10 @@ const About = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <p className="text-justify pt-4">
+            </div> 
+        </div>
+        <div>
+        <p className="text-justify pt-4">
             Born in 80s, Professor Mokhter Ahmad completed his graduation from
             the most revered institution in Bangladesh, University of Dhaka. He
             then dedicated himself towards the fullfilment of his dream to repel

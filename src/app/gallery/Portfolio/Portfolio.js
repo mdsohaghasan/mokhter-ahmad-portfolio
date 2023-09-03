@@ -37,9 +37,9 @@ const Portfolio = () => {
         <div className="st-height-b25 st-height-lg-b25"></div>
       </div>
       <div className="container">
-        <div className="row">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5 ">
         {Gallery.map((gallery) => (
-          <div className="col-lg-4 col-md-6" key={gallery.id}>
+          <div className="" key={gallery.id}>
             <div className="st-portfolio-single st-style1 st-lightgallery">
               <div className="st-portfolio-item">
                 <Link
@@ -54,15 +54,14 @@ const Portfolio = () => {
             </div>
           </div>
             ))}
-
-          <div className="col-lg-12 text-center">
+        </div>
+        <div className="text-center">
             <div className="st-portfolio-btn">
               <Link href="#" className="st-btn st-style1 st-color1">
                 Load More
               </Link>
             </div>
           </div>
-        </div>
       </div>
       <div className="st-height-b100 st-height-lg-b80"></div>
     </section>

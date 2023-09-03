@@ -14,10 +14,10 @@ const Resume = () => {
         </div>
         <div className="st-height-b25 st-height-lg-b25"></div>
       </div>
-      <div className="container">
-        <div className="row">
+      <div className="container ">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
           {/* <!-- Education --> */}
-          <div className="col-lg-6">
+          <div className=" px-3 sm:px-5 md:px-8 mb-8">
             <div className="st-height-b0 st-height-lg-b50"></div>
             <div className="st-resume-wrap">
               <div className="st-resume-heading">
@@ -85,7 +85,7 @@ const Resume = () => {
           </div>
 
           {/* <!-- Experience --> */}
-          <div className="col-lg-6">
+          <div className="px-3 sm:px-5 ">
             <div className="st-resume-wrap">
               <div className="st-resume-heading">
                 <Image src={experience} alt="resume-icon" />

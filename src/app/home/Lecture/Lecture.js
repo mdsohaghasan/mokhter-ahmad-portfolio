@@ -38,41 +38,41 @@ const Lecture = () => {
         <div className="st-height-b25 st-height-lg-b25"></div>
       </div>
       {/* End Title */}
-      <div className="container px-24">
-        <div className="container lg:px-24 md:px-24 sm:px-12">
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-3 ">
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+     
+        <div className="container">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 justify-center px-10 lg:px-32 ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #Lectures
             </span>
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #Halaqah
             </span>
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #Hajj&Omrah
             </span>
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #Mahfil
             </span>
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #JummaKhutba
             </span>
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #Podcast
             </span>
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #Seminer
             </span>
-            <span className="border border-[#000] rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
               #Nasihah
             </span>
           </div>
         </div>
-      </div>
+     
 
      {/* ------------- */}
 
-     <div className="container lg:px-24 lg:py-8  md:px-24 md:py-8  px-24 py-8">
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-3">
+     <div className="container px-5 py-8 ">
+        <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-3 lx:grid-cols-3 gap-3">
         {slicedLecture.map((lecture) => (
           <div className="border border-[#000]   bg-slate-800" key={lecture._id}>
             <Plyr

@@ -2,7 +2,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-
 const Podcast = () => {
   const [Podcast, setPodcast] = useState([]);
 
@@ -33,30 +32,23 @@ const Podcast = () => {
         <div className="st-height-b25 st-height-lg-b25"></div>
       </div>
 
-      <div className="grid grid-cols-2 gap-1 px-1 pb-5">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2  gap-1 px-5 pb-5">
         {Podcast.map((podcast) => (
           <div
             className="flex gap-3 p-3 m-3 rounded-lg bg-slate-900"
-            key={podcast.id}
-          >
-            <div className="">
+            key={podcast.id} >
+            {/* <div className="">
               <Image
                 src={podcast.url}
                 alt="podcast thumbnail"
                 width={120}
                 height={120}
-                className="rounded-full"
-              />
-            </div>
-            <div className="">
+                className="rounded-full" />
+            </div> */}
+            <div className="w-full">
               <h3 className="text-xl">{podcast.title}</h3>
-              <p>lecturer : {podcast.lecturer}</p>
-              <audio controls>
-               
-                <source src={podcast.audio} type="audio/ogg" />
-                <source src={podcast.audio} type="audio/mpeg" />
-              </audio>
-              
+              <p> {podcast.lecturer}</p>
+               <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src={podcast.audio}></iframe>
             </div>
           </div>
         ))}

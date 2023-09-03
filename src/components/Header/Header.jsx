@@ -36,7 +36,7 @@ const Header = () => {
   // }, []);
 
  
-  /*-----------------------------------------------------------
+        /*------------------------------------------------------------
           particles
         --------------------------------------------------------------*/
 
@@ -214,7 +214,7 @@ const Header = () => {
       {/* <!-- Hero Image - Social Link Group --> */}
       <div className="hero-img-right ">
         <Image className="wow fadeInRight " src={photo} alt="Hero" />
-        <div className="st-social-group social-media  social-media-mobile  wow fadeInLeft">
+        <div className="st-social-group social-media  social-media-mobile  wow fadeInLeft"> 
           <div className="st-social-link">
             <Link
               href="https://www.facebook.com/professormokhterahmad"
