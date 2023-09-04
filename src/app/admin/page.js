@@ -92,7 +92,7 @@ const Page = () => {
         <div className="st-height-b25 st-height-lg-b25"></div>
       </div>
 
-      <div className="grid grid-cols-3 gap-2 px-5">
+      <div className="grid grid-cols-3 gap-2 px-32">
         <div className="bg-[#0a1e3b] p-3 mx-5 my-2 rounded-lg">
           <p className="text-center text-xl font-normal text-slate-200">
             Program Length 

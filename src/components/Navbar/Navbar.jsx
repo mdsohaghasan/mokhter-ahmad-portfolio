@@ -2,10 +2,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import logo from "./logo.png";
-// import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 const Navbar = () => {
+
+  const [mobileToggle, setMobileToggle] = useState(false);
+
+  const handleToggleMenu = () => {
+    setMobileToggle(!mobileToggle);
+  }
+
   return (
+
+    
     <header className="st-site-header st-style1 st-sticky-header">
       <div className="st-main-header">
         <div className="container">
@@ -17,21 +26,21 @@ const Navbar = () => {
             </div>
             <div className="st-main-header-right">
               <div className="st-nav">
-                <ul className="st-nav-list st-onepage-nav">
+                <ul className="st-nav-list st-onepage-nav" style={{ display: `${mobileToggle ? 'block' : 'none'}` }}>
                   <li>
-                    <Link href="/" className="st-smooth-move">
+                    <Link href="/" className="st-smooth-move" onClick={() => setMobileToggle(false)}>
                       Home
                     </Link>
                   </li>
                   <li>
-                    <Link href="/about" className="st-smooth-move">
+                    <Link href="/about" className="st-smooth-move" onClick={() => setMobileToggle(false)}>
                       About
                     </Link>
                   </li>
                   {/* Submenu  */}
                   <span className="dropdown relative st-smooth-move me-5">
                     <li className="rounded inline-flex items-center me-1">
-                      <Link href="/lecture" className="st-smooth-move">
+                      <Link href="/lecture" className="st-smooth-move" onClick={() => setMobileToggle(false)}>
                         MEDIA
                       </Link>
                     </li>
@@ -40,7 +49,7 @@ const Navbar = () => {
                       <li className="">
                         <Link
                           className="st-smooth-move rounded-t bg-gray-200 hover:bg-[#FEC544] py-2 px-4 block"
-                          href="/lecture"
+                          href="/lecture" onClick={() => setMobileToggle(false)}
                         >
                           LECTURES
                         </Link>
@@ -48,7 +57,7 @@ const Navbar = () => {
                       <li className="">
                         <Link
                           className="st-smooth-move bg-gray-200 hover:bg-[#FEC544] py-2 px-4 block"
-                          href="/podcast"
+                          href="/podcast" onClick={() => setMobileToggle(false)}
                         >
                           PODCAST
                         </Link>
@@ -56,7 +65,7 @@ const Navbar = () => {
                       <li className="">
                         <Link
                           className="st-smooth-move rounded-b bg-gray-200 hover:bg-[#FEC544] py-2 px-4 block"
-                          href="/gallery"
+                          href="/gallery" onClick={() => setMobileToggle(false)}
                         >
                           GALLERY
                         </Link>
@@ -65,16 +74,19 @@ const Navbar = () => {
                   </span>
                   {/* Submenu  */}
                   <li>
-                    <Link href="/consultancy" className="st-smooth-move">
+                    <Link href="/consultancy" className="st-smooth-move" onClick={() => setMobileToggle(false)}>
                       CONSULTENCY
                     </Link>
                   </li>
                   <li>
-                    <Link href="/blog" className="st-smooth-move">
+                    <Link href="/blog" className="st-smooth-move" onClick={() => setMobileToggle(false)}>
                       Blog
                     </Link>
                   </li>
                 </ul>
+                <div className={`st-munu-toggle ${mobileToggle ? "st-toggle-active" : ""} `}  onClick={handleToggleMenu}>
+                  <span></span>
+                </div>
                 <div className="sp-phone">
                   <div className="st-hero-btn">
                     <Link
