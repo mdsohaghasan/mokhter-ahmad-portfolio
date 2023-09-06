@@ -3,6 +3,8 @@ import React from "react";
 import Image from "next/image";
 import photo from "./mokhter.jpg";
 import { useEffect } from "react";
+import dynamic from 'next/dynamic';
+import parse from 'html-react-parser';
 
 // Ripple Water Effect .....
 import $ from "jquery";
@@ -15,6 +17,13 @@ import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import Link from "next/link";
+
+const WaterWave = dynamic(
+  () => {
+    return import('react-water-wave');
+  },
+  { ssr: false },
+);
 
 const Header = () => {
   /*--------------------------------------------------------------
@@ -52,10 +61,11 @@ const Header = () => {
   }, []);
 
   return (
-    <section
-      id="tsparticles"
-      className=" flex  bg-[#070d1b]  relative  lg:h-[850px] sm:h-[300px]  "
-    >
+   
+    <section id="tsparticles" className=" flex  bg-[#070d1b]  relative  lg:h-[850px] sm:h-[300px]">
+       
+       
+
       <Particles
         className="bg-image"
         id="tsparticles"
@@ -183,11 +193,23 @@ const Header = () => {
         }}
       /> 
 
+        
+          {/* <WaterWave className="cs-hero_bg cs-bg cs-ripple_version cs-center" >
+            {() => (
+
+              <div className="container">
+              dfghdfghdfhg
+            </div>
+           
+           )}
+           </WaterWave> */}
+        
+
       <div className="container ">
         <div className="lg:mt-32  sm:mt-3 ">
           <div className="lg:ml-0 md:ml-10 sm:ml-5">
-            <h3 className="lg:text-3xl md:text-3xl	sm:text-3xl font-light text-[#fec544]">Assalamu Alaikum, <br/>I am Professor </h3>
-            <h1 className="lg:text-9xl md:text-7xl  sm:text-4xl font-black">
+            <h3 className="sm:text-3xl md:text-3xl lg:text-3xl  font-light text-[#fec544]">Assalamu Alaikum, <br/>I am Professor </h3>
+            <h1 className="sm:text-4xl md:text-7xl lg:text-9xl  font-black">
               Mokhter <br /> Ahmad
             </h1>
             <h2 className="lg:text-4xl md:text-3xl sm:text-2xl">Public Figure</h2>
@@ -195,9 +217,8 @@ const Header = () => {
               <div className="st-hero-btn">
                 <Link
                   href="/about"
-                  className="st-btn st-style1 st-color1 st-smooth-move"
-                >
-                  Get About Section
+                  className="st-btn st-style1 st-color1 st-smooth-move" >
+                     Get About
                 </Link>
               </div>
               <div className="wrapper">
@@ -211,11 +232,13 @@ const Header = () => {
           </div>
         </div>
       </div>
+      
       {/* <!-- Hero Image - Social Link Group --> */}
-      <div className="hero-img-right ">
+      <div className="hero-img-right relative">
         <Image className="wow fadeInRight " src={photo} alt="Hero" />
-        <div className="st-social-group social-media  social-media-mobile  wow fadeInLeft sm:hidden"> 
-          <div className="st-social-link ">
+        <div className=" st-social-group			"> 
+          {/* st-social-group social-media  social-media-mobile  wow fadeInLeft */}
+          <div className=" st-social-link ">
             <Link
               href="https://www.facebook.com/professormokhterahmad"
               target="_blank"
@@ -270,7 +293,18 @@ const Header = () => {
         </div>
       </div>
     </section>
+
   );
 };
 
 export default Header;
+
+
+
+        // <WaterWave className="cs-hero_bg cs-bg cs-ripple_version cs-center" >
+        //   {() => (
+
+        //   )}
+        // </WaterWave>
+
+

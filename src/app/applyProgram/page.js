@@ -19,13 +19,13 @@ const applyProgram = () => {
         {/* <!-- Contact Container --> */}
 
         <div className="container">
-          <div className="flex">
-            <div className="basis-2/12	"></div>
-            <div className="basis-8/12">
+          <div className="flex justify-center	">
+            <div className="lg:basis-2/12	md:basis-2/12 basis-0/12"></div>
+            <div className="lg:basis-8/12 md:basis-8/12 basis-12/12">
               <div id="st-alert"></div>
               <ProgramForm></ProgramForm>
             </div>
-            <div className="basis-2/12	"></div>
+            <div className="lg:basis-2/12	md:basis-2/12 basis-0/12"></div>
             <div className="st-height-b0 st-height-lg-b30"></div>
           </div>
         </div>

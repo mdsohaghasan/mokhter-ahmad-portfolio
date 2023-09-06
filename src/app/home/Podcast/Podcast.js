@@ -1,11 +1,10 @@
 "use client";
-import React, { useEffect, useState , useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import podcast from "./Podcast.jpeg";
 import title from "./title.png";
 import btnPart from "./btn-part.png";
 import Link from "next/link";
-
 
 
 
@@ -46,7 +45,6 @@ const Podcast = () => {
 
   const slicedPodcast = Podcast.slice(-8);
 
-
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
@@ -65,7 +63,7 @@ const Podcast = () => {
     <section id="podcast ">
       <div className="st-height-b100 st-height-lg-b80"></div>
       <div className="container px-5">
-        <div className="flex justify-center ">
+        <div className="lg:flex justify-center ">
           <div className="bg-[#101624] py-4 ">
             <div className="title">
               <Image src={title} alt="play" />
@@ -73,14 +71,13 @@ const Podcast = () => {
             <div className="podcastButton grid grid-cols-2 gap-3 ms-20 mr-16 py-2">  
             {slicedPodcast.map((podcast) => (
               <div className="bg-gradient-to-b from-[#333333] to-[#000000]  rounded flex justify-start items-center" key={podcast._id}>
-                <i className="bi bi-play-fill text-3xl ms-3"></i>   
+                {/* <i className="bi bi-play-fill text-3xl ms-3"></i> */}
                 <div>
                   <audio ref={audioRef} src="/pod.mp3" />
                     <button onClick={togglePlay}>
                       {isPlaying ? 'Pause' : 'Play'}
                     </button>
                 </div>
-                {/* <audio  src="/pod.mp3">  </audio>  */}
                 <Image src={btnPart} alt="btn" className="part mx-3"></Image>
                 <span className="text-[#D6D6D6] text-1xl">Iman Booster</span>
               </div>
@@ -93,7 +90,7 @@ const Podcast = () => {
             </div>
             <div></div>
           </div>
-          <div className="  ">
+          <div className="self-center  md:hidden lg:block  ">
             <Image src={podcast} alt="podcast" />
           </div>
         </div>
@@ -105,21 +102,3 @@ const Podcast = () => {
 };
 
 export default Podcast;
-
-
-
-
-
-
-
-// export default function Sound() {
-
-
-//     return (
-//         <>
-//             <audio controls  src="/Flying - Track Tribe.mp3"> </audio>
-//         </>
-//     );
-// }
-
-{/* <audio controls src="/Flying - Track Tribe.mp3"> </audio> */}
