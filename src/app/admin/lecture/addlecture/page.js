@@ -45,10 +45,10 @@ const Page = () => {
     .then((result) => {
       console.log("Post er data Paichi", result);
       if (result) {
-        toast.success("Sabbas: lecture video add hoise Successfully");
+        toast.success("Yah! Lecture Video Added Successfully");
         reset();
       } else {
-        toast.error("lecture video Add Hoy Nai, Abar..");
+        toast.error("Ohh!, Lecture is Not Added Again..");
       }
     });
 };
@@ -62,7 +62,6 @@ const Page = () => {
       <div className="container">
         <div className="st-section-heading st-style1">
           <h4 className="st-section-heading-title">Add Lecture</h4>
-          <h2 className="st-section-heading-subtitle">Add Lecture</h2>
         </div>
         <div className="st-height-b25 st-height-lg-b25"></div>
       </div>

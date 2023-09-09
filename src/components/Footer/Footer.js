@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./fotter.css";
 import Link from "next/link";
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Footer = () => {
 
@@ -40,6 +42,12 @@ const Footer = () => {
 };
 
 
+   // AOS Animation .........
+   useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <section id="contact" className="st-dark-bg">
       <div className="st-height-b100 st-height-lg-b80"></div>
@@ -55,10 +63,12 @@ const Footer = () => {
 
       <div className="footerImage ">
         <div className="container  ">
-          <div className="grid justify-center	sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 pb-24 p-5">
-            <div className="mt-10">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 justify-center	 pb-24 p-5 ">
+        
+
+            <div className="mt-10" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">
               <form onSubmit={handleSubmit(onSubmit)} action="#" method="POST" className="st-contact-form" id="contact-form" >
-                
+
                   <div className="st-form-field">
                   <input placeholder='Your Name' type="text"{...register("name" , { required: true })} />
                   {errors.name && <p className='text-red'>name is required.</p>}
@@ -82,7 +92,7 @@ const Footer = () => {
               </form>
             </div>
 
-            <div className="lg:pl-8 md:pl-8">
+            <div className="lg:pl-8 md:pl-8" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
             {/* <div className="pt-5 sm:pl-0 md:pl-8 lg:pl-8"> */}
               <div className="st-height-b0 st-height-lg-b40"></div>
               <h3 className="st-contact-title">Contact Info</h3>

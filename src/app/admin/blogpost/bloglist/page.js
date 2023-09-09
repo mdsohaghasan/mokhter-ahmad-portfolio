@@ -6,7 +6,6 @@ import { redirect } from "next/navigation";
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { revalidateTag } from 'next/cache'
 
 const Page =  () => {
 
@@ -25,8 +24,7 @@ const Page =  () => {
 
   useEffect(() => {
     const url = `https://test.mashqulquran.com/blog`;
-    fetch(url,  {
-      next:{ revalidate: 10 },
+    fetch(url, {
       // headers: {
       //   authorization: `Bearer ${token}`,
       // },
@@ -41,9 +39,7 @@ const Page =  () => {
   console.log(Blog);
 
 // EVENT HANDLER FOR DELETE BUTTON
-
 const {  reset,  } = useForm();
-
 const handleDelete = (id) => {
   console.log(id);
       const proceed = window.confirm("are you sure deleteing");
@@ -64,10 +60,10 @@ const handleDelete = (id) => {
               const remaining = Blog.filter((post) => post._id !== id);
               setBlog(remaining);
               if (remaining) {
-                toast.success("Sabbas: Post Out Koira Disi");
+                toast.success("Yah! Post is Deleted Successfully");
                 reset();
               } else {
-                toast.error("Post Delete Hoy Nai, Abar..");
+                toast.error("Ohh! Post is not Deleted, Again..");
               }
             }
           });
@@ -78,8 +74,15 @@ const handleDelete = (id) => {
 
   return (
     <section className="container">
-      <h1 className="text-center text-5xl py-3">Blog List</h1>
-      <div className="grid grid-cols-2 gap-1 px-1 pb-5">
+      <div className="container">
+        <div className="st-height-b80 st-height-lg-b80"></div>
+          <div className="st-section-heading st-style1">
+            <h4 className="st-section-heading-title">Blog List</h4>
+          </div>
+          <div className="st-height-b25 st-height-lg-b25"></div>
+        </div>
+      <Link className="px-3 py-2  ml-5 bg-green-300 rounded-lg text-black text-lg" href={`/admin/blogpost/addpost`} target="_blank">Add Blog</Link>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-1 px-1 pb-5 mt-2">
         {Blog.map((post) => (
           <div className="bg-[#0a1e3b] p-3 m-2 rounded-lg" key={post.id}>
             <Image src={post.url} alt="blog thumbnail" width={500} height={500} />
@@ -87,9 +90,9 @@ const handleDelete = (id) => {
               <h3 className="text-xl">{post.title}</h3>
               <p className="text-justify">{post.des}</p>
               <p> Author : {post.author}</p>
-              <p> Date : {post.date}</p>
-              <button className="px-3 py-2  bg-green-300 rounded-lg text-slate-800"><Link href={`/admin/blogpost/bloglist/${post._id}`} target="_blank">Update Post</Link></button>
-              <button className="px-3 py-2 mx-3 bg-red-300 rounded-lg text-slate-800" onClick={() => handleDelete(post._id)}>Delete Post</button>
+              <p> Date : {post.date}</p>             
+              <button className="px-3 py-2 mr-3 mb-2 bg-green-300 rounded-lg text-slate-800"><Link href={`/admin/blogpost/bloglist/${post._id}`} target="_blank">Update Post</Link></button>
+              <button className="px-3 py-2  sm:mx-3 bg-red-300 rounded-lg text-slate-800" onClick={() => handleDelete(post._id)}>Delete Post</button>
             </div>
           </div>
         ))}

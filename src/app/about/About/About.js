@@ -1,14 +1,24 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import photo from "./about.png";
 import Image from "next/image";
 import mark1 from "./mark-1.png";
 import mark2 from "./mark-2.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import localFont from "next/font/local";
 const myFont = localFont({ src: "../../fonts/KaushanScript-Regular.ttf" });
 const myFont2 = localFont({ src: "../../fonts/Griggs-LightSerif.otf" });
 
 const About = () => {
+
+      // AOS Animation .........
+      useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, []);
+
   return (
     <section id="about" className="st-about-wrap ">
       <div className="st-height-b100 st-height-lg-b80"></div>
@@ -21,7 +31,7 @@ const About = () => {
       </div>
       <div className="container p-5 md:p-8 lg:p-12 ">
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 justify-center	">
-          <div className=" wow fadeInLeft">
+          <div data-aos="fade-right" data-aos-duration="800">
             <div className="st-about-img-wrap  aboutImg p-5">
               <Image
                 className="st-about-img st-dynamic-bg st-bg grayscale hover:grayscale-0 over:blur"
@@ -32,7 +42,7 @@ const About = () => {
             </div>
             <div className="st-height-b0 st-height-lg-b30"></div>
           </div>
-            <div className="st-vertical-middle">
+            <div className="st-vertical-middle" data-aos="fade-left" data-aos-duration="800">
               <div className="st-vertical-middle-in">
                 <div className="st-text-block st-style1">
                   <h2 className={`text-4xl  ${myFont2.className}`}>
@@ -82,41 +92,43 @@ const About = () => {
             </div> 
         </div>
         <div>
-        <p className="text-justify pt-4">
-            Born in 80s, Professor Mokhter Ahmad completed his graduation from
-            the most revered institution in Bangladesh, University of Dhaka. He
-            then dedicated himself towards the fullfilment of his dream to repel
-            the ignorance about Quran. He served as a faculty in the leading
-            institutions like IUT, IIUC, Asian University of Bangladesh (AUB).
-            Under his guidance & supervision, he served as the Director of
-            Daffodil Islamic Centre (DIC) under the umbrella of Daffodil
-            International University.
-          </p>
+        <div data-aos="fade-up" data-aos-duration="800">
+          <p className="text-justify pt-4">
+              Born in 80s, Professor Mokhter Ahmad completed his graduation from
+              the most revered institution in Bangladesh, University of Dhaka. He
+              then dedicated himself towards the fullfilment of his dream to repel
+              the ignorance about Quran. He served as a faculty in the leading
+              institutions like IUT, IIUC, Asian University of Bangladesh (AUB).
+              Under his guidance & supervision, he served as the Director of
+              Daffodil Islamic Centre (DIC) under the umbrella of Daffodil
+              International University.
+            </p>
 
-          <p className="text-justify">
-            Professor Mokhter Ahmad preached Quranic knowledge & authentic
-            Sunnah throughout his life, but felt a need for space where people
-            from all over the world can be benefitted from his pearls of wisdom
-            & knowledge. To materialize that long cherished dream, “Tarbiyah
-            Education Network” has come into reality. Now, thousands of people
-            from all the five continents are studying under the umbrella of
-            “Tarbiyah Education Network”.
-          </p>
+            <p className="text-justify">
+              Professor Mokhter Ahmad preached Quranic knowledge & authentic
+              Sunnah throughout his life, but felt a need for space where people
+              from all over the world can be benefitted from his pearls of wisdom
+              & knowledge. To materialize that long cherished dream, “Tarbiyah
+              Education Network” has come into reality. Now, thousands of people
+              from all the five continents are studying under the umbrella of
+              “Tarbiyah Education Network”.
+            </p>
 
-          <p className="text-justify">
-            His dream is to build up an Ummah, free from the ignorance of basic
-            understandings of Quran. He established Tarbiyah Academy for the
-            Adults, Tarbiyah Online Madrasa for the Teens around the world
-            operating in both Bangla & English version simultaneously, Tarbiyah
-            Institute for teaching Quranic Exegis & Grammar & Madrasatut
-            Tarbiyah for kids blending Cambridge Curriculum & Islamic Sciences.
-          </p>
+            <p className="text-justify">
+              His dream is to build up an Ummah, free from the ignorance of basic
+              understandings of Quran. He established Tarbiyah Academy for the
+              Adults, Tarbiyah Online Madrasa for the Teens around the world
+              operating in both Bangla & English version simultaneously, Tarbiyah
+              Institute for teaching Quranic Exegis & Grammar & Madrasatut
+              Tarbiyah for kids blending Cambridge Curriculum & Islamic Sciences.
+            </p>
 
-          <p className="text-justify">
-            Professor Mokhter Ahmad, a revolutionist of our age, is working day
-            & night to regenerate the Ummah tirelessly. He is a rare glimpse of
-            hope revered among all the spheres of society.
-          </p>
+            <p className="text-justify">
+              Professor Mokhter Ahmad, a revolutionist of our age, is working day
+              & night to regenerate the Ummah tirelessly. He is a rare glimpse of
+              hope revered among all the spheres of society.
+            </p>
+        </div>
         </div>
       </div>
     </section>

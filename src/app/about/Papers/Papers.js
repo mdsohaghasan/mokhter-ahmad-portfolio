@@ -1,9 +1,19 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import paper from "./reachers.png";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Papers = () => {
+
+// AOS Animation .........
+useEffect(() => {
+  AOS.init();
+  AOS.refresh();
+}, []);
+
   return (
     <section className="container">
       <div className="st-height-b100 st-height-lg-b80"></div>
@@ -16,12 +26,12 @@ const Papers = () => {
       </div>
 
       <div className="container">
-        <div className="lg:flex lg:items-center	 py-5">
-          <div className="lg:basis-6/12 mr-11">
-            <Image src={paper} alt="quran"  />
+        <div className="md:flex md:items-center lg:flex lg:items-center	 py-5">
+          <div className="md:basis-6/12 lg:basis-6/12 mr-11">
+            <Image src={paper} alt="quran"  data-aos="fade-up" data-aos-duration="500"/>
           </div>
-          <div className="lg:basis-6/12">
-            <div className="my-4">
+          <div className="md:basis-6/12 lg:basis-6/12" data-aos="fade-up" data-aos-duration="500">
+            <div className="my-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
               <div className="flex mb-2">
                 <h4 className="pr-5 text-slate-400">01</h4>
                 <h4 className="text-slate-400">
@@ -36,7 +46,7 @@ const Papers = () => {
               </div>
             </div>
 
-            <div className="my-4">
+            <div className="my-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
               <div className="flex mb-2">
                 <h4 className="pr-5 text-slate-400">02</h4>{" "}
                 <h4 className="text-slate-400">
@@ -52,7 +62,7 @@ const Papers = () => {
               </div>
             </div>
 
-            <div className="my-4">
+            <div className="my-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
               <div className="flex mb-2">
                 <h4 className="pr-5 text-slate-400">03</h4>{" "}
                 <h4 className="text-slate-400">
@@ -68,7 +78,7 @@ const Papers = () => {
               </div>
             </div>
 
-            <div className="my-4">
+            <div className="my-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
               <div className="flex mb-2 ">
                 <h4 className="pr-5 text-slate-400">04</h4>{" "}
                 <h4 className="text-slate-400">

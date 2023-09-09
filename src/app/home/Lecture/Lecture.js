@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Plyr from "plyr-react";
 import "plyr-react/plyr.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Lecture = () => {
 
@@ -27,6 +29,13 @@ const Lecture = () => {
 
     const slicedLecture = Lecture.slice(-6);
 
+
+    // AOS Animation .........
+      useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, []);
+
   return (
     <div className="py-8">
       {/* start Title */}
@@ -40,29 +49,29 @@ const Lecture = () => {
       {/* End Title */}
      
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 justify-center px-10 lg:px-32 ">
-            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 justify-center px-10 lg:px-32" data-aos="zoom-in-up" data-aos-duration="800">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center">
               #Lectures
             </span>
-            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center">
               #Halaqah
             </span>
-            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center">
               #Hajj&Omrah
             </span>
-            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center">
               #Mahfil
             </span>
-            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center">
               #JummaKhutba
             </span>
-            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center">
               #Podcast
             </span>
-            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center">
               #Seminer
             </span>
-            <span className="border border-white rounded-2xl py-1 px-3 text-center ">
+            <span className="border border-white rounded-2xl py-1 px-3 text-center">
               #Nasihah
             </span>
           </div>
@@ -71,10 +80,11 @@ const Lecture = () => {
 
      {/* ------------- */}
 
-     <div className="container px-5 py-8 ">
-        <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-3 lx:grid-cols-3 gap-3">
+     <div className="container lg:px-5 py-8 ">
+        <div className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-3 lx:grid-cols-3 gap-4 ">
         {slicedLecture.map((lecture) => (
-          <div className="border border-[#000]   bg-slate-800" key={lecture._id}>
+          <div className="border-2 border-white rounded-md bg-slate-800  " key={lecture._id} data-aos="zoom-out-up" data-aos-duration="800" data-aos-delay="300">
+            <div className="hover:scale-110 transition-transform duration-300">
             <Plyr
               source={{
                 type: "video",
@@ -82,8 +92,18 @@ const Lecture = () => {
               }}
             />
           </div>
+          </div>
            ))}
         </div>
+
+            <div className="flex justify-center py-4" data-aos="fade-up" data-aos-duration="800">
+              <Link
+                href="/lecture"
+                className="st-btn st-style1 st-color1 st-smooth-move">
+                See Lecture
+              </Link>
+            </div>
+
       </div>
      {/* ------------- */}
 

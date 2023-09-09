@@ -1,6 +1,7 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Podcast = () => {
   const [Podcast, setPodcast] = useState([]);
@@ -21,6 +22,12 @@ const Podcast = () => {
 
   console.log(Podcast);
 
+     // AOS Animation .........
+     useEffect(() => {
+      AOS.init();
+      AOS.refresh();
+    }, []);
+
   return (
     <div className="container">
       <div className="st-height-b100 st-height-lg-b80"></div>
@@ -34,17 +41,7 @@ const Podcast = () => {
 
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2  gap-1 px-5 pb-5">
         {Podcast.map((podcast) => (
-          <div
-            className="flex gap-3 p-3 m-3 rounded-lg bg-slate-900"
-            key={podcast.id} >
-            {/* <div className="">
-              <Image
-                src={podcast.url}
-                alt="podcast thumbnail"
-                width={120}
-                height={120}
-                className="rounded-full" />
-            </div> */}
+          <div className="flex gap-3 p-3 m-3 rounded-lg bg-slate-900" key={podcast.id} data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
             <div className="w-full">
               <h3 className="text-xl">{podcast.title}</h3>
               <p> {podcast.lecturer}</p>

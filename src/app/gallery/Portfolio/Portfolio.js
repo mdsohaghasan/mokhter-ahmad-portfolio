@@ -2,11 +2,18 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 
 const Portfolio = () => {
+
+    // AOS Animation .........
+    useEffect(() => {
+      AOS.init();
+      AOS.refresh();
+    }, []);
 
   const [Gallery, setGallery] = useState([]);
 
@@ -37,9 +44,9 @@ const Portfolio = () => {
         <div className="st-height-b25 st-height-lg-b25"></div>
       </div>
       <div className="container">
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5 ">
+        <div className="row">
         {Gallery.map((gallery) => (
-          <div className="" key={gallery.id}>
+          <div className="col-lg-4 col-md-6" key={gallery.id} data-aos="zoom-out-up" data-aos-duration="800" data-aos-delay="300">
             <div className="st-portfolio-single st-style1 st-lightgallery">
               <div className="st-portfolio-item">
                 <Link
@@ -54,14 +61,15 @@ const Portfolio = () => {
             </div>
           </div>
             ))}
-        </div>
-        <div className="text-center">
-            <div className="st-portfolio-btn">
+
+          <div className="col-lg-12 text-center">
+            <div className="st-portfolio-btn" data-aos="fade-up" data-aos-duration="800">
               <Link href="#" className="st-btn st-style1 st-color1">
                 Load More
               </Link>
             </div>
           </div>
+        </div>
       </div>
       <div className="st-height-b100 st-height-lg-b80"></div>
     </section>

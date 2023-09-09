@@ -62,51 +62,28 @@ const handleDelete = (id) => {
               const remaining = Book.filter((book) => book._id !== id);
               setBook(remaining);
               if (remaining) {
-                toast.success("Sabbas: Book Out Koira Disi");
+                toast.success("Yah! Book is Deleted Successfully");
                 reset();
               } else {
-                toast.error("Book Delete Hoy Nai, Abar..");
+                toast.error("Ohh! Something went wrong, Again..");
               }
             }
           });
       }
 };
 
-  // const Book = [
-  //  {
-  //     id: 1,
-  //     url: "https://images.unsplash.com/photo-1691394790591-b1ce2093b045?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  //     title: "The Pillars of Islam: A Comprehensive Guide to the Five Foundations of Faith",
-  //     des: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose",
-  //     author: "mokhter ahmad",
-  //   },
-  //   {
-  //     id: 2,
-  //     url: "https://images.unsplash.com/photo-1691394790591-b1ce2093b045?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  //     title: "The Pillars of Islam: A Comprehensive Guide to the Five Foundations of Faith",
-  //     des: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose",
-  //     author: "mokhter ahmad",
-  //   },
-  //   {
-  //     id: 3,
-  //     url: "https://images.unsplash.com/photo-1691394790591-b1ce2093b045?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  //     title: "The Pillars of Islam: A Comprehensive Guide to the Five Foundations of Faith",
-  //     des: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose",
-  //     author: "mokhter ahmad",
-  //   },
-  //   {
-  //     id: 4,
-  //     url: "https://images.unsplash.com/photo-1691394790591-b1ce2093b045?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  //     title: "The Pillars of Islam: A Comprehensive Guide to the Five Foundations of Faith",
-  //     des: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose",
-  //     author: "mokhter ahmad",
-  //   },
-  // ];
 
   return (
     <section className="container">
-      <h1 className="text-center text-5xl py-3">Book List</h1>
-      <div className="grid grid-cols-3 gap-1 px-1 pb-5">
+       <div className="container">
+      <div className="st-height-b100 st-height-lg-b80"></div>
+        <div className="st-section-heading st-style1">
+          <h4 className="st-section-heading-title">Book List</h4>
+        </div>
+        <div className="st-height-b25 st-height-lg-b25"></div>
+      </div>
+      <Link className="px-3 py-2  ml-5 bg-green-300 rounded-lg text-black text-lg" href={`/admin/book/addbook`} target="_blank">Add Book</Link>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 px-1 pb-5 mt-2">
         {Book.map((book) => (
           <div className="bg-[#0a1e3b] p-3 m-2 rounded-lg" key={book.id}>
             <Image src={book.url} alt="blog thumbnail" width={200} height={400} />
@@ -114,6 +91,7 @@ const handleDelete = (id) => {
               <h3 className="text-xl">{book.title}</h3>
               <p className="text-justify">{book.des}</p>
               <p> Author : {book.author}</p>
+              <button className="px-3 py-2 mr-3 mb-2 bg-green-300 rounded-lg text-slate-800"><Link href={`/admin/book/addbook/${book._id}`} target="_blank">Update Book</Link></button>
               <button className="px-3 py-2 bg-red-300 rounded-lg text-slate-800" onClick={() => handleDelete(book._id)}>Delete Book</button>
             </div>
           </div>

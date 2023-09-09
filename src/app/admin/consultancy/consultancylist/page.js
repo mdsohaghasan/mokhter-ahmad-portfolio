@@ -64,10 +64,10 @@ const Page =  () => {
                       const remaining = Consultancy.filter((consultancy) => consultancy._id !== id);
                       setConsultancy(remaining);
                       if (remaining) {
-                        toast.success("Sabbas: Consultancy Out Koira Disi");
+                        toast.success("Yah! Consultancy is Deleted Successfully");
                         reset();
                       } else {
-                        toast.error("Consultancy Delete Hoy Nai, Abar..");
+                        toast.error("Ohh! Something went Wrong, Again..");
                       }
                     }
                   });
@@ -77,11 +77,16 @@ const Page =  () => {
 
   return (
     <section className='container'>
-      <h1 className="text-center text-5xl py-3">Consultancy List</h1>
-      <div className="grid grid-cols-1 gap-2 px-5 pb-6">
-
+       <div className="container">
+      <div className="st-height-b100 st-height-lg-b80"></div>
+        <div className="st-section-heading st-style1">
+          <h4 className="st-section-heading-title">Lecture List</h4>
+        </div>
+        <div className="st-height-b25 st-height-lg-b25"></div>
+      </div>
+      <Link className="px-3 py-2  ml-12 bg-green-300 rounded-lg text-black text-lg" href={`/consultancy`} target="_blank"> Add Consultancy</Link>
+      <div className="grid grid-cols-1 gap-2 px-5 pb-6 mt-3">
       {Consultancy.map((consultancy) => (
-
          <div className='bg-[#0a1e3b] p-3 mb-3 rounded-lg' key={consultancy.id}>
             <div className='py-2'>
                 <h3>{consultancy.category}</h3>
@@ -90,7 +95,9 @@ const Page =  () => {
                 <p>Email : {consultancy.email}</p>
                 <p>Subject : {consultancy.subject}</p>
                 <p>Message : {consultancy.message}</p>
-                <button className="bg-[#fec544] py-2 px-3  rounded-lg text-gray-900 text-center text-xl font-medium" onClick={() => handleDelete(consultancy._id)}>Delete Consultancy</button>
+                <button className="px-3 py-2 mr-3 mb-2 bg-green-300 rounded-lg text-slate-800"><Link href={`/admin/lecture/lecturelist/${consultancy._id}`} target="_blank">Update Consultancy</Link></button>
+                <button className="px-3 py-2 bg-red-300 rounded-lg text-slate-800" onClick={() => handleDelete(consultancy._id)}>Delete Consultancy</button>
+                
             </div>
          </div>
           ))}

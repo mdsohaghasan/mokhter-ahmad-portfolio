@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Link from "next/link";
 
 const Page = () => {
   // function getToken() {
@@ -46,10 +47,10 @@ const Page = () => {
       .then((result) => {
         console.log("Event er data Paichi", result);
         if (result) {
-          toast.success("Sabbas: Event add hoise Successfully");
+          toast.success("Yah! Event is Added Successfully");
           reset();
         } else {
-          toast.error("Event Add Hoy Nai, Abar..");
+          toast.error("Ohh! Something went wrong, Again..");
         }
       });
   };
@@ -57,15 +58,14 @@ const Page = () => {
   return (
     <div>
       <section id="contact" className="st-dark-bg">
-        <div className="st-height-b100 st-height-lg-b80"></div>
         <div className="container">
+        <div className="st-height-b100 st-height-lg-b80"></div>
           <div className="st-section-heading st-style1">
             <h4 className="st-section-heading-title">Add Event</h4>
-            <h2 className="st-section-heading-subtitle">Event</h2>
           </div>
           <div className="st-height-b25 st-height-lg-b25"></div>
         </div>
-
+        
         {/* <!-- Contact Container --> */}
 
         <div className="container">

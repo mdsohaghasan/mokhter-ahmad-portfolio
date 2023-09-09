@@ -44,15 +44,13 @@ const Page = () => {
     .then((result) => {
       console.log("Post er data Paichi", result);
       if (result) {
-        toast.success("Sabbas: Post add hoise Successfully");
+        toast.success("Yah! Post Added Successfully");
         reset();
       } else {
-        toast.error("Post Add Hoy Nai, Abar..");
+        toast.error("Ohh!, Post is Not Added, Again..");
       }
     });
 };
-
-    
 
   return (
     
@@ -63,7 +61,6 @@ const Page = () => {
       <div className="container">
         <div className="st-section-heading st-style1">
           <h4 className="st-section-heading-title">Add Post</h4>
-          <h2 className="st-section-heading-subtitle">Add Post</h2>
         </div>
         <div className="st-height-b25 st-height-lg-b25"></div>
       </div>

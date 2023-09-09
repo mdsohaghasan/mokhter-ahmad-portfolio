@@ -1,8 +1,11 @@
 "use client";
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 const MAX_STEPS = 3
 
@@ -93,10 +96,15 @@ const renderButtons = () => {
    }
 }
 
-  return (
-    <div>
-        
+    // AOS Animation .........
+    useEffect(() => {
+      AOS.init();
+      AOS.refresh();
+    }, []);
 
+  return (
+    <div data-aos="fade-up" data-aos-duration="800">
+  
         {formStep < 3 && (
           <div className="h-2 w-full bg-gray-200">
             <div
@@ -140,7 +148,7 @@ const renderButtons = () => {
             </div>
           )}
 
-       <form onSubmit={handleSubmit(onSubmit)} action="#" method="POST" className="st-contact-form" id="contact-form">
+         <form onSubmit={handleSubmit(onSubmit)} action="#" method="POST" className="st-contact-form" id="contact-form">
                
                {/* ==========00000000000000======== */}
 
@@ -150,49 +158,49 @@ const renderButtons = () => {
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter Program Title </label>
                  <input  type="text"{...register("programTitle" , { required: true })} />
-                 {errors.programTitle && <p className='text-red'>program title is required.</p>}
+                 {errors.programTitle && <p className='text-red ml-3'>program title is required.</p>}
               </div>
              
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter Program Proposed Date </label>
                  <input  type="date"{...register("programDate" , { required: true })} />
-                 {errors.programDate && <p className='text-red'>program date is required.</p>}
+                 {errors.programDate && <p className='text-red ml-3'>program date is required.</p>}
               </div>
              
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter Lecture Time</label>
                  <input  type="time"{...register("lectureTime" , { required: true })} />
-                 {errors.lectureTime && <p className='text-red'>lecture time is required.</p>}
+                 {errors.lectureTime && <p className='text-red ml-3'>lecture time is required.</p>}
               </div>
              
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter Topic of the Lecture</label>
                  <input  type="text"{...register("lectureTopic" , { required: true })} />
-                 {errors.lectureTopic && <p className='text-red'>lecture topic is required.</p>}
+                 {errors.lectureTopic && <p className='text-red ml-3'>lecture topic is required.</p>}
               </div>
              
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter Applicants Name</label>
                  <input  type="text"{...register("applicants" , { required: true })} />
-                 {errors.applicants && <p className='text-red'>applicants name is required.</p>}
+                 {errors.applicants && <p className='text-red ml-3'>applicants name is required.</p>}
               </div>
              
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter Applicants Mobile Number</label>
                  <input  type="number"{...register("applicantsNumber" , { required: true })} />
-                 {errors.applicantsNumber && <p className='text-red'>applicants number is required.</p>}
+                 {errors.applicantsNumber && <p className='text-red ml-3'>applicants number is required.</p>}
               </div>
              
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter Google Map Link</label>
                  <input  type="text"{...register("googleMap" , { required: true })} />
-                 {errors.googleMap && <p className='text-red'>google map is required.</p>}
+                 {errors.googleMap && <p className='text-red ml-3'>google map is required.</p>}
               </div>
              
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter Place Name / Road</label>
                  <input  type="text"{...register("placeName" , { required: true })} />
-                 {errors.placeName && <p className='text-red'>place name is required.</p>}
+                 {errors.placeName && <p className='text-red ml-3'>place name is required.</p>}
               </div>
 
               </section>
@@ -205,25 +213,25 @@ const renderButtons = () => {
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter Post Office Name</label>
                  <input  type="text"{...register("postOffice" , { required: true })} />
-                 {errors.postOffice && <p className='text-red'>post office is required.</p>}
+                 {errors.postOffice && <p className='text-red ml-3'>post office is required.</p>}
               </div>
              
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter Upazila Name</label>
                  <input  type="text"{...register("upazila" , { required: true })} />
-                 {errors.upazila && <p className='text-red'>upazila name is required.</p>}
+                 {errors.upazila && <p className='text-red ml-3'>upazila name is required.</p>}
               </div>
              
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter District Name</label>
                  <input  type="text"{...register("district" , { required: true })} />
-                 {errors.district && <p className='text-red'>district name is required.</p>}
+                 {errors.district && <p className='text-red ml-3'>district name is required.</p>}
               </div>
              
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter Name of the venue</label>
                  <input  type="text"{...register("venue" , { required: true })} />
-                 {errors.venue && <p className='text-red'>venue name is required.</p>}
+                 {errors.venue && <p className='text-red ml-3'>venue name is required.</p>}
               </div>
              
                <div className="st-form-field">
@@ -235,7 +243,7 @@ const renderButtons = () => {
                <div className="st-form-field">
                  <label className="ml-3" for="">Enter Other Guests Name of the Program</label>
                  <input  type="text"{...register("guestsName" , { required: true })} />
-                 {errors.guestsName && <p className='text-red'>Guests Name is required.</p>}
+                 {errors.guestsName && <p className='text-red ml-3'>Guests Name is required.</p>}
               </div>
              
                {/* <div className="st-form-field">
@@ -247,7 +255,7 @@ const renderButtons = () => {
               <div className="st-form-field">
                  <label className="ml-3" for="">Enter Program Presidents Name </label>
                  <input  type="text"{...register("presidentsName" , { required: true })} />
-                 {errors.presidentsName && <p className='text-red'>presidents Name is required.</p>}
+                 {errors.presidentsName && <p className='text-red ml-3'>presidents Name is required.</p>}
               </div>
 
               </section>
@@ -261,37 +269,37 @@ const renderButtons = () => {
               <div className="st-form-field">
                  <label className="ml-3" for="">Enter Presidents Mobile Number</label>
                  <input  type="text"{...register("presidentsNumber" , { required: true })} />
-                 {errors.presidentsNumber && <p className='text-red'>presidents number is required.</p>}
+                 {errors.presidentsNumber && <p className='text-red ml-3'>presidents number is required.</p>}
               </div>
                                
               <div className="st-form-field">
                  <label className="ml-3" for="">Enter Number of Volunteers</label>
                  <input  type="text"{...register("volunteersNumber" , { required: true })} />
-                 {errors.volunteersNumber && <p className='text-red'>volunteers number is required.</p>}
+                 {errors.volunteersNumber && <p className='text-red ml-3'>volunteers number is required.</p>}
               </div>
                                
               <div className="st-form-field">
                  <label className="ml-3" for="">Enter Permission Criteria </label>
                  <input  type="text"{...register("permissionCriteria" , { required: true })} />
-                 {errors.permissionCriteria && <p className='text-red'>permission criteria is required.</p>}
+                 {errors.permissionCriteria && <p className='text-red ml-3'>permission criteria is required.</p>}
               </div>
                                
               <div className="st-form-field">
                  <label className="ml-3" for="">Enter Total Number of Program </label>
                  <input  type="text"{...register("totalProgram" , { required: true })} />
-                 {errors.totalProgram && <p className='text-red'>total program is required.</p>}
+                 {errors.totalProgram && <p className='text-red ml-3'>total program is required.</p>}
               </div>
                                
               <div className="st-form-field">
                  <label className="ml-3" for="">Enter Last Program Date </label>
                  <input  type="date"{...register("lastDate" , { required: true })} />
-                 {errors.lastDate && <p className='text-red'>last date is required.</p>}
+                 {errors.lastDate && <p className='text-red ml-3'>last date is required.</p>}
               </div>
                                
               <div className="st-form-field">
                  <label className="ml-3" for="">Enter Guests of tha Last Program </label>
                  <input  type="date"{...register("lastProgramGguests" , { required: true })} />
-                 {errors.lastProgramGguests && <p className='text-red'>last program guests is required.</p>}
+                 {errors.lastProgramGguests && <p className='text-red ml-3'>last program guests is required.</p>}
               </div>     
 
               </section>

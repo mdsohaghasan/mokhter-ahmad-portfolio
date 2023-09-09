@@ -59,45 +59,36 @@ const Page = () => {
             const remaining = Lecture.filter((lecture) => lecture._id !== id);
             setLecture(remaining);
             if (remaining) {
-              toast.success("Sabbas: lecture Out Koira Disi");
+              toast.success("Yah! Lecture is Deleted Successfully");
               reset();
             } else {
-              toast.error("lecture Delete Hoy Nai, Abar..");
+              toast.error("Ohh! Lecture is Deleted, Again..");
             }
           }
         });
     }
   };
 
-  // const Lecture = [
-  //  {
-  //     id: 1,
-  //     url: "https://youtu.be/XhE9KHkMDgk",
-  //     title: "The Pillars of Islam: A Comprehensive Guide to the Five Foundations of Faith",
-  //     category: "Islamic bayan",
-  //     date: "12-12-2022",
-  //   },
-  //   {
-  //     id: 2,
-  //     url: "https://youtu.be/8E5IwQ2whpg",
-  //     title: "The Pillars of Islam: A Comprehensive Guide to the Five Foundations of Faith",
-  //     category: "Islamic bayan",
-  //     date: "12-12-2022",
-  //   },
-  //   {
-  //     id: 3,
-  //     url: "https://youtu.be/9wH1Mcgw0Rs",
-  //     title: "The Pillars of Islam: A Comprehensive Guide to the Five Foundations of Faith",
-  //     category: "Islamic bayan",
-  //     date: "12-12-2022",
-  //   },
-
-  // ];
-
   return (
     <section className="container">
-      <h1 className="text-center text-5xl py-3">Lecture List</h1>
-      <div className="grid grid-cols-3 gap-1 px-1 pb-5">
+      
+      <div className="container">
+        <div className="st-height-b100 st-height-lg-b80"></div>
+        <div className="st-section-heading st-style1">
+          <h4 className="st-section-heading-title">Lecture List</h4>
+        </div>
+        <div className="st-height-b25 st-height-lg-b25"></div>
+      </div>
+
+      <Link
+        className="px-3 py-2  ml-5 bg-green-300 rounded-lg text-black text-lg"
+        href={`/admin/lecture/addlecture`}
+        target="_blank"
+      >
+        {" "}
+        Add Lecture
+      </Link>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 pb-5 mt-2">
         {Lecture.map((lecture) => (
           <div className="bg-[#0a1e3b] p-3 m-2 rounded-lg" key={lecture.id}>
             <Plyr
@@ -112,7 +103,20 @@ const Page = () => {
               <p> Category : {lecture.category}</p>
               <p> Date : {lecture.date}</p>
             </div>
-            <button className="px-3 py-2 bg-red-300 rounded-lg text-slate-800" onClick={() => handleDelete(lecture._id)}>Delete Lecture</button>
+            <button className="px-3 py-2 mr-3 mb-2 bg-green-300 rounded-lg text-slate-800">
+              <Link
+                href={`/admin/lecture/lecturelist/${lecture._id}`}
+                target="_blank"
+              >
+                Update Lecture
+              </Link>
+            </button>
+            <button
+              className="px-3 py-2 bg-red-300 rounded-lg text-slate-800"
+              onClick={() => handleDelete(lecture._id)}
+            >
+              Delete Lecture
+            </button>
           </div>
         ))}
       </div>

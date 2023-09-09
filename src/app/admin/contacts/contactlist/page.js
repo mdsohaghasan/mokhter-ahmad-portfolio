@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
@@ -59,10 +60,10 @@ const handleDelete = (id) => {
               const remaining = Contact.filter((contact) => contact._id !== id);
               setContact(remaining);
               if (remaining) {
-                toast.success("Sabbas: contact Out Koira Disi");
+                toast.success("yah! Contact is Deleted Successfully");
                 reset();
               } else {
-                toast.error("contact Delete Hoy Nai, Abar..");
+                toast.error("Ohh! Something went Wrong, Again..");
               }
             }
           });
@@ -74,11 +75,15 @@ const handleDelete = (id) => {
 
   return (
     <section className='container'>
-      <h1 className="text-center text-5xl py-3">Contact List</h1>
+      <div className="container">
+      <div className="st-height-b100 st-height-lg-b80"></div>
+        <div className="st-section-heading st-style1">
+          <h4 className="st-section-heading-title">Contact List</h4>
+        </div>
+        <div className="st-height-b25 st-height-lg-b25"></div>
+      </div>
       <div className="grid grid-cols-1 gap-2 px-5 pb-6">
-
       {Contact.map((contact) => (
-
          <div className='bg-[#0a1e3b] p-3 mb-3 rounded-lg' key={contact.id}>
             <div className='py-2'>
                 <h3>Name : {contact.name}</h3>

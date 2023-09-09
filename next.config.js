@@ -5,8 +5,12 @@ const nextConfig = {
     domains: ['via.placeholder.com'],
     unoptimized: true
   },
+  
 }
 
 module.exports = nextConfig
+
+
+  
 
 

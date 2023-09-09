@@ -6,6 +6,7 @@ import Quote from "@/app/home/Quote/Quote";
 import Consultancy from "./home/Consultancy/Consultancy";
 import Events from "./home/Events/Events";
 import Blogs from "./home/Blog/Blogs";
+import { SessionProvider } from "next-auth/react"
 import Lecture from "./home/Lecture/Lecture";
 
 

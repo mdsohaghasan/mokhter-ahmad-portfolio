@@ -62,10 +62,10 @@ const handleDelete = (id) => {
               const remaining = Podcast.filter((podcast) => podcast._id !== id);
               setPodcast(remaining);
               if (remaining) {
-                toast.success("Sabbas: Podcast Out Koira Disi");
+                toast.success("Yah! Podcast is Deleted Successfully");
                 reset();
               } else {
-                toast.error("Podcast Delete Hoy Nai, Abar..");
+                toast.error("Ohh! Something went wrong, Again..");
               }
             }
           });
@@ -75,8 +75,15 @@ const handleDelete = (id) => {
 
   return (
     <section className="container">
-      <h1 className="text-center text-5xl py-3">Podcast List</h1>
-      <div className="grid grid-cols-2 gap-1 px-1 pb-5">
+      <div className="container">
+      <div className="st-height-b100 st-height-lg-b80"></div>
+        <div className="st-section-heading st-style1">
+          <h4 className="st-section-heading-title">Podcast List</h4>
+        </div>
+        <div className="st-height-b25 st-height-lg-b25"></div>
+      </div>
+      <Link className="px-3 py-2  ml-5 bg-green-300 rounded-lg text-black text-lg" href={`/admin/podcast/addpodcast`} target="_blank"> Add Podcast</Link>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-1 justify-center px-1 pb-5 mt-2">
         {Podcast.map((podcast) => (
           <div className="bg-[#0a1e3b] p-3 m-2 rounded-lg" key={podcast.id}>
             <Image src={podcast.url} alt="blog thumbnail" width={500} height={500} />
@@ -88,6 +95,7 @@ const handleDelete = (id) => {
                 <source src={podcast.audio} type="audio/ogg" />
                 <source src={podcast.audio} type="audio/mpeg" />
               </audio>
+              <button className="px-3 py-2 mr-3 mb-2 bg-green-300 rounded-lg text-slate-800"><Link href={`/admin/podcastlist/lecturelist/${podcast._id}`} target="_blank">Update podcast</Link></button>
               <button className="px-3 py-2  my-3 bg-red-300 rounded-lg text-slate-800" onClick={() => handleDelete(podcast._id)}>Delete podcast</button>
             </div>
           </div>

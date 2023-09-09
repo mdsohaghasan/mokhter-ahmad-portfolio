@@ -61,49 +61,27 @@ const handleDelete = (id) => {
               const remaining = Event.filter((event) => event._id !== id);
               setEvent(remaining);
               if (remaining) {
-                toast.success("Sabbas: Post Out Koira Disi");
+                toast.success("Yah! Event is Added Successfully");
                 reset();
               } else {
-                toast.error("Post Delete Hoy Nai, Abar..");
+                toast.error("Ohh! Something went wrong, Again..");
               }
             }
           });
       }
 };
 
-
-  // const Event = [
-  //   {
-  //     id: 1,
-  //     image: quran,
-  //     title: "Lecture Session On Positive Parenting",
-  //     time: "08:30 PM",
-  //     date: "12-12-2022",
-  //     address: "Adv. Tarek Memorial Auditorium, Mymensingh",
-  //   },
-  //   {
-  //     id: 2,
-  //     image: quran,
-  //     title: "Lecture Session On Positive Parenting",
-  //     time: "08:30 PM",
-  //     date: "12-12-2022",
-  //     address: "Adv. Tarek Memorial Auditorium, Mymensingh",
-  //   },
-  //   {
-  //     id: 3,
-  //     image: quran,
-  //     title: "Lecture Session On Positive Parenting",
-  //     time: "08:30 PM",
-  //     date: "12-12-2022",
-  //     address: "Adv. Tarek Memorial Auditorium, Mymensingh",
-  //   },
-  // ];
-
   return (
     <section className="container ">
-      <h1 className="text-center text-5xl py-3">Event List</h1>
-      <Link className="px-3 py-2 my-2   bg-green-300 rounded-lg text-slate-800" href={`/admin/event/addevent`} target="_blank">Add Event</Link>
-      <div className="grid grid-cols-3 gap-1 px-1 pb-5">
+       <div className="container">
+        <div className="st-height-b80 st-height-lg-b80"></div>
+          <div className="st-section-heading st-style1">
+            <h4 className="st-section-heading-title">Event List</h4>
+          </div>
+          <div className="st-height-b25 st-height-lg-b25"></div>
+        </div>
+      <Link className="px-3 py-2  ml-5 bg-green-300 rounded-lg text-black text-lg" href={`/admin/event/addevent`} target="_blank">Add Event</Link>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 px-1 pb-5 mt-2">
         {Event.map((event) => (
           <div className="bg-[#0a1e3b] p-3 m-2 rounded-lg" key={event.id}>
             <Image src={event.image} alt="blog thumbnail" width={300} height={300}/>
@@ -112,6 +90,7 @@ const handleDelete = (id) => {
               <p> Time : {event.time}</p>
               <p> Date : {event.date}</p>
               <p className="text-justify"> Address : {event.address}</p>
+              <button className="px-3 py-2 mr-3 mb-2 bg-green-300 rounded-lg text-slate-800"><Link href={`/admin/event/eventlist/${event._id}`} target="_blank">Update Event</Link></button>
               <button className="px-3 py-2 bg-red-300 rounded-lg text-slate-800" onClick={() => handleDelete(event._id)}>Delete Event</button>
             </div>
           </div>

@@ -2,9 +2,8 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import mokhter from "./mokhter.jpg";
-import program1 from "./program1.jpg";
-import program2 from "./program2.png";
-import program3 from "./program3.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Events = () => {
   const [Event, setEvent] = useState([]);
@@ -25,40 +24,13 @@ const Events = () => {
 
   console.log(Event);
 
-  // const res = [
-  //   // {
-  //   //   id: 1,
-  //   //   image: mokhter,
-  //   //   title: "Lecture Session On Positive Parenting",
-  //   //   time: "08:30 PM",
-  //   //   date: "12-12-2022",
-  //   //   address: "Adv. Tarek Memorial Auditorium, Mymensingh",
-  //   // },
-  //   {
-  //     id: 2,
-  //     image: program1,
-  //     title: "Live Q&A Program, Sharīah Prescription",
-  //     time: "08:30 PM",
-  //     date: "20-07-2023",
-  //     address: "Social Media Platfrom",
-  //   },
-  //   {
-  //     id: 3,
-  //     image: program2,
-  //     title: "Jumuah Khutbah",
-  //     time: "12:30 PM",
-  //     date: "21-07-2023",
-  //     address: "Masjid e Bilal Ra. Banasree, Dhaka",
-  //   },
-  //   {
-  //     id: 3,
-  //     image: program3,
-  //     title: "লেকচার সেশন- হজ্জ পরবর্তী করনীয়",
-  //     time: "05:00 PM",
-  //     date: "22-07-2023",
-  //     address: "কুরআন স্কুল ক্যাম্পাস, ৮/১৬ ব্লক-এ, লালমাটিয়া, ঢাকা ",
-  //   },
-  // ];
+const slicedEvent = Event.slice(-3);
+
+  // AOS Animation .........
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   return (
     <section>
@@ -70,12 +42,12 @@ const Events = () => {
           <h2 className="st-section-heading-subtitle">Events </h2>
         </div>
         <div className="st-height-b25 st-height-lg-b25"></div>
-        <div className="px-5 lg:px-0">
+        <div className="lg:px-5 ">
           <div className="lg:flex  gap-3">
-            <div className="bg-[#101624] basis-2/5 relative  ">
+            <div className="bg-[#101624] basis-2/5 relative" data-aos="fade-right" data-aos-duration="800">
               <Image src={mokhter} alt="Mokhtar Ahmad" />
 
-              <div className=" p-3 bg-[#101624] absolute  bottom-0 w-full ">
+              <div className=" lg:py-3 bg-[#101624] absolute  bottom-0 w-full ">
                 <div className="title ">
                   <h3 className="text-xl ps-1.5 m-0">
                     Lecture Session On Positive Parenting
@@ -90,9 +62,9 @@ const Events = () => {
               </div>
             </div>
 
-            <div className="bg-[#101624] basis-3/5">
-              {Event.map((event) => (
-                <div className="flex p-3" key={event.id}>
+            <div className="bg-[#101624] basis-3/5" data-aos="fade-left" data-aos-duration="300">
+              {slicedEvent.map((event) => (
+                <div className="flex p-3" key={event.id} data-aos="fade-up" data-aos-duration="800">
                   <div className="date basis-1/5">
                     <h4 className="text-lg text-[#FEC544] m-0">{event.date}</h4>
                     <h6 className="text-lg">{event.time}</h6>

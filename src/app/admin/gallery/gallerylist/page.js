@@ -62,10 +62,10 @@ const handleDelete = (id) => {
               const remaining = Gallery.filter((gallery) => gallery._id !== id);
               setGallery(remaining);
               if (remaining) {
-                toast.success("Sabbas: gallery Out Koira Disi");
+                toast.success("Yah! Gallery is Deleted Successfully");
                 reset();
               } else {
-                toast.error("gallery Delete Hoy Nai, Abar..");
+                toast.error("Ohh! Something is Deleted, Again..");
               }
             }
           });
@@ -75,13 +75,21 @@ const handleDelete = (id) => {
 
   return (
     <section className="container">
-      <h1 className="text-center text-5xl py-3">Gallery List</h1>
-      <div className="grid grid-cols-2 gap-1 px-1 pb-5">
+      <div className="container">
+      <div className="st-height-b100 st-height-lg-b80"></div>
+        <div className="st-section-heading st-style1">
+          <h4 className="st-section-heading-title">Gallery List</h4>
+        </div>
+        <div className="st-height-b25 st-height-lg-b25"></div>
+      </div>
+      <Link className="px-3 py-2  ml-5 bg-green-300 rounded-lg text-black text-lg" href={`/admin/gallery/addgallery`} target="_blank"> Add Gallery</Link>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-1 px-1 pb-5 mt-2">
         {Gallery.map((gallery) => (
           <div className="bg-[#0a1e3b] p-3 m-2 rounded-lg" key={gallery.id}>
             <Image src={gallery.url} alt="blog thumbnail" width={500} height={500} />
             <div className="py-2">
               <h5 className="text-xl">{gallery.caption}</h5>
+              <button className="px-3 py-2 mr-3 mb-2 bg-green-300 rounded-lg text-slate-800"><Link href={`/admin/gallery/addgallery/${gallery._id}`} target="_blank">Update Gallery</Link></button>
               <button className="px-3 py-2 my-3 bg-red-300 rounded-lg text-slate-800" onClick={() => handleDelete(gallery._id)}>Delete Gallery</button>
             </div>
           </div>

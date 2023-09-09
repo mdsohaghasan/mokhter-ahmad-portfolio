@@ -73,6 +73,7 @@ const Page = () => {
       setPodcast(podcast)
       setGallery(gallery)
       setBook(book)
+
     })
   ) }
 
@@ -87,13 +88,12 @@ const Page = () => {
       <div className="container">
         <div className="st-section-heading st-style1">
           <h4 className="st-section-heading-title">Admin Panel</h4>
-          <h2 className="st-section-heading-subtitle">Admin Panel</h2>
         </div>
         <div className="st-height-b25 st-height-lg-b25"></div>
       </div>
 
-      <div className="grid grid-cols-3 gap-2 px-32">
-        <div className="bg-[#0a1e3b] p-3 mx-5 my-2 rounded-lg">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 justify-center md:px-16 lg:px-24">
+        <div className="bg-[#0a1e3b] p-3  my-2 rounded-lg">
           <p className="text-center text-xl font-normal text-slate-200">
             Program Length 
           </p>
@@ -109,7 +109,7 @@ const Page = () => {
             </p>
           </Link>
         </div>
-        <div className="bg-[#0a1e3b] p-3 mx-5 my-2 rounded-lg">
+        <div className="bg-[#0a1e3b] p-3 my-2 rounded-lg">
           <p className="text-center text-xl font-normal text-slate-200">
             Blog Length
           </p>
@@ -125,7 +125,7 @@ const Page = () => {
             </p>
           </Link>
         </div>
-        <div className="bg-[#0a1e3b] p-3 mx-5 my-2 rounded-lg">
+        <div className="bg-[#0a1e3b] p-3 my-2 rounded-lg">
           <p className="text-center text-xl font-normal text-slate-200">
             Lecture Length
           </p>
@@ -141,7 +141,7 @@ const Page = () => {
             </p>
           </Link>
         </div>
-        <div className="bg-[#0a1e3b] p-3 mx-5 my-2 rounded-lg">
+        <div className="bg-[#0a1e3b] p-3 my-2 rounded-lg">
           <p className="text-center text-xl font-normal text-slate-200">
             Event Length
           </p>
@@ -157,7 +157,7 @@ const Page = () => {
             </p>
           </Link>
         </div>
-        <div className="bg-[#0a1e3b] p-3 mx-5 my-2 rounded-lg">
+        <div className="bg-[#0a1e3b] p-3  my-2 rounded-lg">
           <p className="text-center text-xl font-normal text-slate-200">
             Consultancy Length
           </p>
@@ -173,7 +173,7 @@ const Page = () => {
             </p>
           </Link>
         </div>
-        <div className="bg-[#0a1e3b] p-3 mx-5 my-2 rounded-lg">
+        <div className="bg-[#0a1e3b] p-3 my-2 rounded-lg">
           <p className="text-center text-xl font-normal text-slate-200">
             Contact Length
           </p>
@@ -189,7 +189,7 @@ const Page = () => {
             </p>
           </Link>
         </div>
-        <div className="bg-[#0a1e3b] p-3 mx-5 my-2 rounded-lg">
+        <div className="bg-[#0a1e3b] p-3  my-2 rounded-lg">
           <p className="text-center text-xl font-normal text-slate-200">
            Podcast Length
           </p>
@@ -205,7 +205,7 @@ const Page = () => {
             </p>
           </Link>
         </div>
-        <div className="bg-[#0a1e3b] p-3 mx-5 my-2 rounded-lg">
+        <div className="bg-[#0a1e3b] p-3 my-2 rounded-lg">
           <p className="text-center text-xl font-normal text-slate-200">
              Gallery Length
           </p>
@@ -221,7 +221,7 @@ const Page = () => {
             </p>
           </Link>
         </div>
-        <div className="bg-[#0a1e3b] p-3 mx-5 my-2 rounded-lg">
+        <div className="bg-[#0a1e3b] p-3 my-2 rounded-lg">
           <p className="text-center text-xl font-normal text-slate-200">
              Book Length
           </p>
@@ -248,5 +248,3 @@ const Page = () => {
 };
 
 export default Page;
-
-

@@ -1,9 +1,19 @@
+"use client"
 import Image from "next/image";
-import React from "react";
 import photo from "./consultancy.png";
 import Link from "next/link";
+import React, { useEffect} from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Consultancy = () => {
+
+  // AOS Animation .........
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <section>
       <div className="st-height-b100 st-height-lg-b80"></div>
@@ -19,10 +29,10 @@ const Consultancy = () => {
       <div className="container px-8 ">
         <div className="lg:flex lg:items-center md:flex md:items-center	">
           <div className="md:w-1/2 lg:w-1/2">
-            <div className="  lg:text-left ">
+            <div className="  lg:text-left" data-aos="fade-up" data-aos-duration="500">
               <h1 className="text-4xl py-3">Sharīah Consultency</h1>
             </div>
-            <div className="my-3">
+            <div className="my-3" data-aos="fade-up" data-aos-duration="800">
               <span className="border border-white rounded-3xl py-2 px-3  text-center mr-4">
                 Sharīah Prescription
               </span>
@@ -30,7 +40,7 @@ const Consultancy = () => {
                 Family Consultancy
               </span>
             </div>
-            <div className="py-3">
+            <div className="py-3" data-aos="fade-up" data-aos-duration="500">
               <p className="text-justify">
                 Our Sharīah Consultancy offers expert guidance and solutions
                 tailored to meet your specific needs within the framework of
@@ -44,16 +54,15 @@ const Consultancy = () => {
                 application.
               </p>
             </div>
-            <div className="st-hero-btn">
+            <div className="st-hero-btn" data-aos="fade-up" data-aos-duration="500">
               <Link
                 href="/applyProgram"
-                className="st-btn st-style1 st-color1 st-smooth-move"
-              >
+                className="st-btn st-style1 st-color1 st-smooth-move">
                 Ask Question
               </Link>
             </div>
           </div>
-          <div className="md:w-1/2 lg:w-1/2">
+          <div className="md:w-1/2 lg:w-1/2" data-aos="fade-left" data-aos-duration="800">
             <Image src={photo} alt="Consultancy"></Image>
           </div>
         </div>

@@ -14,7 +14,7 @@ const consultancy = () => {
       </div>
       {/* End Title */}
 
-      <div className="container px-10 md:px-48 ">
+      <div className="container md:px-48">
         <Consultancy></Consultancy>
       </div>
     </div>

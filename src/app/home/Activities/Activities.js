@@ -1,6 +1,16 @@
-import React from "react";
+"use client";
+import React, { useEffect} from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Activities = () => {
+
+// AOS Animation .........
+useEffect(() => {
+  AOS.init();
+  AOS.refresh();
+}, []);
+
   return (
     <section>
       <div className="st-height-b100 st-height-lg-b80"></div>
@@ -14,10 +24,10 @@ const Activities = () => {
 
       {/* <!-- Iconbox Container --> */}
 
-      <div className="container px-5 lg:px-0">
+      <div className="container lg:px-0">
         <div className="grid xl:grid-cols-3 xl:px-0 lg:grid-cols-3 lg:px-16 md:grid-cols-2 md:px-16 grid-cols-1 sm:px-16 gap-5">
           <div className="">
-            <div className="st-iconbox st-style1">
+            <div className="st-iconbox st-style1" data-aos="zoom-out-up" data-aos-duration="800" data-aos-delay="300">
               <div className="st-iconbox-icon">
                 <svg viewBox="0 0 512 512">
                   <g>
@@ -44,7 +54,7 @@ const Activities = () => {
           </div>
           {/* <!-- .col --> */}
           <div className="">
-            <div className="st-iconbox st-style1">
+            <div className="st-iconbox st-style1" data-aos="zoom-out-up" data-aos-duration="800" data-aos-delay="300">
               <div className="st-iconbox-icon">
                 <svg viewBox="0 0 512 512">
                   <g>
@@ -140,7 +150,7 @@ const Activities = () => {
           </div>
           {/* <!-- .col --> */}
           <div className="">
-            <div className="st-iconbox st-style1">
+            <div className="st-iconbox st-style1" data-aos="zoom-out-up" data-aos-duration="800" data-aos-delay="300">
               <div className="st-iconbox-icon">
                 <svg viewBox="0 0 64 64">
                   <path d="m62.618 45-5-10h-1.618v-34h-14v34h-19v-17.217l-4.676-10.286c-.413-.909-1.325-1.497-2.324-1.497s-1.911.588-2.324 1.496l-4.676 10.287v17.217h-2.618l-5 10h5.618v18h50v-18zm-18.618-14h6v-2h-6v-2h4v-2h-4v-2h6v-2h-6v-2h4v-2h-4v-2h6v-2h-6v-2h4v-2h-4v-2h6v-2h-6v-2h10v32h-10zm12.382 6 3 6h-21.764l-3-6zm-39.387-2v-15.132l2.002 1.333 2.003-1.334v15.133zm3.743-17.361-1.741 1.159-3.002-2.001-2.998 2-1.735-1.158 1.654-3.639h6.167zm-5.242-9.316c.18-.393.828-.394 1.008.001l1.67 3.676h-4.349zm-4.496 11.547 1.997 1.333 1.998-1.333v15.13h-3.995zm-3.382 17.13h21.764l-3 6h-21.764zm1.382 8h18.618l3.382-6.764v22.764h-22zm46 16h-22v-22.764l3.382 6.764h18.618z" />
@@ -161,7 +171,7 @@ const Activities = () => {
           </div>
           {/* <!-- .col --> */}
           <div className="">
-            <div className="st-iconbox st-style1">
+            <div className="st-iconbox st-style1" data-aos="zoom-out-up" data-aos-duration="800" data-aos-delay="300">
               <div className="st-iconbox-icon">
                 <svg viewBox="0 0 512 512">
                   <g>
@@ -180,7 +190,7 @@ const Activities = () => {
           </div>
           {/* <!-- .col --> */}
           <div className="">
-            <div className="st-iconbox st-style1">
+            <div className="st-iconbox st-style1" data-aos="zoom-out-up" data-aos-duration="800" data-aos-delay="300">
               <div className="st-iconbox-icon">
                 <svg viewBox="0 0 512 512">
                   <path d="m48 496h416a32.036 32.036 0 0 0 32-32v-416a32.036 32.036 0 0 0 -32-32h-416a32.036 32.036 0 0 0 -32 32v416a32.036 32.036 0 0 0 32 32zm-16-32h32v16h-16a16.01833 16.01833 0 0 1 -16-16zm128-48h-80v-16h80zm0 16v16h-80v-16zm0 32v16h-80v-16zm0-80h-80v-16h80zm-32-32h-96v-176h96zm-64 16v16h-32v-16zm0 32v16h-32v-16zm0 32v16h-32v-16zm400 48h-288v-112h304v96a16.01833 16.01833 0 0 1 -16 16zm16-432v304h-336v-320h320a16.01833 16.01833 0 0 1 16 16zm-432-16h80v128h-96v-112a16.01833 16.01833 0 0 1 16-16z" />
@@ -211,7 +221,7 @@ const Activities = () => {
           </div>
           {/* <!-- .col --> */}
           <div className="">
-            <div className="st-iconbox st-style1">
+            <div className="st-iconbox st-style1" data-aos="zoom-out-up" data-aos-duration="800" data-aos-delay="300">
               <div className="st-iconbox-icon">
                 <svg viewBox="0 0 512 512">
                   <g id="XMLID_1568_">

@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Page =  () => {
   
@@ -23,7 +25,11 @@ const Page =  () => {
 
   console.log(Blog);
 
-  
+    // AOS Animation .........
+    useEffect(() => {
+      AOS.init();
+      AOS.refresh();
+    }, []);
 
   return (
     <section id="blog">
@@ -40,10 +46,10 @@ const Page =  () => {
         <div className="lg:basis-3/4  ">
           <div className="grid md:grid-cols-2 gap-8 ">
             {Blog.map((post) => (
-              <div key={post._id}>
+              <div key={post._id} data-aos="fade-up" >
                 <Link href={`/blog/${post._id}`}>
-                  <div className="slick-slide-in">
-                    <div className="st-post-single st-style1">
+                  <div className="slick-slide-in" >
+                    <div className="st-post-single st-style1" data-aos-duration="800" data-aos-delay="300">
                       <div className="st-post-thumb st-zoom">
                         <Image
                           src={post.url}

@@ -3,6 +3,8 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import mokhter from "./mokhter.png";
 import quote from "./quote.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // slider
 import { Autoplay, EffectFade } from "swiper/modules";
@@ -31,7 +33,16 @@ import "swiper/css";
 
 //  ];
 
+// AOS Animation .........
+
+
 const Quote = () => {
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <section id="quote">
       <div className="st-height-b100 st-height-lg-b80"></div>
@@ -46,7 +57,7 @@ const Quote = () => {
 
       <div className="container px-5 lg:px-0">
         <div className="lg:flex  lg:gap-3 ">
-          <div className="lg:w-4/6 py-5">
+          <div className="lg:w-4/6 py-5" data-aos="fade-up" data-aos-duration="800">
             {/* slide section  */}
             <Swiper
               //  effect={'fade'}
@@ -97,7 +108,7 @@ const Quote = () => {
             {/* slide section  */}
           </div>
 
-          <div className="lg:w-2/6 px-6 py-4">
+          <div className="lg:w-2/6  py-4" data-aos="fade-left" data-aos-duration="800">
             <Image src={mokhter} alt="quote" />
           </div>
         </div>

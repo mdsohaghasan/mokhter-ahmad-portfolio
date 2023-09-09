@@ -13,8 +13,6 @@ const Navbar = () => {
   }
 
   return (
-
-    
     <header className="st-site-header st-style1 st-sticky-header">
       <div className="st-main-header">
         <div className="container">
@@ -49,24 +47,21 @@ const Navbar = () => {
                       <li className="">
                         <Link
                           className="st-smooth-move rounded-t bg-gray-200 hover:bg-[#FEC544] py-2 px-4 block"
-                          href="/lecture" onClick={() => setMobileToggle(false)}
-                        >
+                          href="/lecture" onClick={() => setMobileToggle(false)} >
                           LECTURES
                         </Link>
                       </li>
                       <li className="">
                         <Link
                           className="st-smooth-move bg-gray-200 hover:bg-[#FEC544] py-2 px-4 block"
-                          href="/podcast" onClick={() => setMobileToggle(false)}
-                        >
+                          href="/podcast" onClick={() => setMobileToggle(false)}>
                           PODCAST
                         </Link>
                       </li>
                       <li className="">
                         <Link
                           className="st-smooth-move rounded-b bg-gray-200 hover:bg-[#FEC544] py-2 px-4 block"
-                          href="/gallery" onClick={() => setMobileToggle(false)}
-                        >
+                          href="/gallery" onClick={() => setMobileToggle(false)}>
                           GALLERY
                         </Link>
                       </li>

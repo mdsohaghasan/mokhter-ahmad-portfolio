@@ -46,12 +46,10 @@ import { redirect } from "next/navigation";
       <div className="container">
         <div className="st-section-heading st-style1">
           <h4 className="st-section-heading-title">Upcoming Program  </h4>
-          {/* <h2 className="st-section-heading-subtitle">Upcoming Program</h2> */}
         </div>
-        <div className="st-height-b25 st-height-lg-b25"></div>
       </div>
 
-      <div className="relative overflow-x-auto  py-10">
+      <div className="relative overflow-x-auto  pb-5">
         <table className="w-full text-xl text-left text-slate-800  ">
           <thead className=" text-slate-800 uppercase bg-[#b7d2ff]  ">
             <tr>

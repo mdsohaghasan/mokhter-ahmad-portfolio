@@ -3,14 +3,11 @@ import React from "react";
 import Image from "next/image";
 import photo from "./mokhter.jpg";
 import { useEffect } from "react";
-import dynamic from 'next/dynamic';
-import parse from 'html-react-parser';
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 // Ripple Water Effect .....
 import $ from "jquery";
-// import 'react-jquery-plugin'
-// import Ripples from 'react-ripples'
-// import "jquery.ripples";
+
 
 // Particles Depandency .....
 import { useCallback } from "react";
@@ -18,38 +15,18 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import Link from "next/link";
 
-const WaterWave = dynamic(
-  () => {
-    return import('react-water-wave');
-  },
-  { ssr: false },
-);
-
 const Header = () => {
-  /*--------------------------------------------------------------
-          9. Social Button Hover
-        --------------------------------------------------------------*/
+  
+  //  Social Button Hover .........
+        
   useEffect(() => {
     $(".st-social-btn").hover(function () {
       $(this).addClass("active").siblings().removeClass("active");
     });
   }, []);
 
-  // Jquery Ripple water effect .............
-  // useEffect(() => {
-  //   $(".st-ripple-version").ripples({
-  //     resolution: 512,
-  //     dropRadius: 20,
-  //     perturbance: 0.04,
-  //   });
-  // }, []);
-
- 
-        /*------------------------------------------------------------
-          particles
-        --------------------------------------------------------------*/
-
-  // Your client-side code that uses the document object here
+  
+    // Particles Function ....
 
   const particlesInit = useCallback(async (engine) => {
     // console.log(engine);
@@ -60,12 +37,17 @@ const Header = () => {
     // await console.log(container);
   }, []);
 
-  return (
-   
-    <section id="tsparticles" className=" flex  bg-[#070d1b]  relative  lg:h-[850px] sm:h-[300px]">
-       
-       
+  // AOS Animation .........
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
+  return (
+    <section
+      id="tsparticles"
+      className=" flex  bg-[#070d1b]  relative  lg:h-[850px] sm:h-[300px]  "
+    >
       <Particles
         className="bg-image"
         id="tsparticles"
@@ -193,37 +175,27 @@ const Header = () => {
         }}
       /> 
 
-        
-          {/* <WaterWave className="cs-hero_bg cs-bg cs-ripple_version cs-center" >
-            {() => (
-
-              <div className="container">
-              dfghdfghdfhg
-            </div>
-           
-           )}
-           </WaterWave> */}
-        
-
       <div className="container ">
         <div className="lg:mt-32  sm:mt-3 ">
           <div className="lg:ml-0 md:ml-10 sm:ml-5">
-            <h3 className="sm:text-3xl md:text-3xl lg:text-3xl  font-light text-[#fec544]">Assalamu Alaikum, <br/>I am Professor </h3>
-            <h1 className="sm:text-4xl md:text-7xl lg:text-9xl  font-black">
+            <h3 className="lg:text-3xl md:text-3xl	sm:text-3xl font-light text-[#fec544]" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Assalamu Alaikum, <br/>I am Professor </h3>
+            <h1 className="lg:text-9xl md:text-7xl  sm:text-4xl font-black" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
               Mokhter <br /> Ahmad
             </h1>
-            <h2 className="lg:text-4xl md:text-3xl sm:text-2xl">Public Figure</h2>
+            <h2 className="lg:text-4xl md:text-3xl sm:text-2xl" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">Public Figure</h2>
             <div className="flex my-6">
-              <div className="st-hero-btn">
+              <div className="st-hero-btn" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                 <Link
                   href="/about"
-                  className="st-btn st-style1 st-color1 st-smooth-move" >
-                     Get About
+                  target="_blank"
+                  className="st-btn st-style1 st-color1 st-smooth-move"
+                >
+                  Get About
                 </Link>
               </div>
-              <div className="wrapper">
+              <div className="wrapper" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                 <div className="icon-wrapper">
-                  <Link href="/lecture">
+                  <Link href="/lecture" target="_blank">
                     <i className="bi bi-play-circle"></i>
                   </Link>
                 </div>
@@ -232,13 +204,11 @@ const Header = () => {
           </div>
         </div>
       </div>
-      
       {/* <!-- Hero Image - Social Link Group --> */}
-      <div className="hero-img-right relative">
-        <Image className="wow fadeInRight " src={photo} alt="Hero" />
-        <div className=" st-social-group			"> 
-          {/* st-social-group social-media  social-media-mobile  wow fadeInLeft */}
-          <div className=" st-social-link ">
+      <div className="hero-img-right ">
+        <Image src={photo} alt="Hero" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300"/>
+        <div className="st-social-group social-media  social-media-mobile" data-aos="fade-left" data-aos-duration="800" data-aos-delay="500">
+          <div className="st-social-link">
             <Link
               href="https://www.facebook.com/professormokhterahmad"
               target="_blank"
@@ -293,18 +263,7 @@ const Header = () => {
         </div>
       </div>
     </section>
-
   );
 };
 
 export default Header;
-
-
-
-        // <WaterWave className="cs-hero_bg cs-bg cs-ripple_version cs-center" >
-        //   {() => (
-
-        //   )}
-        // </WaterWave>
-
-

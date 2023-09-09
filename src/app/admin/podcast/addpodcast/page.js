@@ -43,10 +43,10 @@ const Page = () => {
     .then((result) => {
       console.log("Podcast er data Paichi", result);
       if (result) {
-        toast.success("Sabbas: Podcast add hoise Successfully");
+        toast.success("Yah! Podcast is Added  Successfully");
         reset();
       } else {
-        toast.error("Podcast Add Hoy Nai, Abar..");
+        toast.error("Ohh! Something went wrong, Again..");
       }
     });
 };
@@ -58,11 +58,10 @@ const Page = () => {
     <div>
       <div>
       <section id="contact" className="st-dark-bg">
-      <div className="st-height-b100 st-height-lg-b80"></div>
       <div className="container">
+      <div className="st-height-b100 st-height-lg-b80"></div>
         <div className="st-section-heading st-style1">
           <h4 className="st-section-heading-title">Add Podcast</h4>
-          <h2 className="st-section-heading-subtitle">Add Podcast</h2>
         </div>
         <div className="st-height-b25 st-height-lg-b25"></div>
       </div>

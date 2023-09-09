@@ -4,13 +4,15 @@ import Image from "next/image";
 import PubImg from "./publication.png";
 import nasihah from "./nasihah.jpg";
 import "./Publications.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Publications = () => {
 
   const [Book, setBook] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/book`;
+    const url = `https://test.mashqulquran.com/book`;
     fetch(url, {
       // headers: {
       //   authorization: `Bearer ${token}`,
@@ -25,7 +27,11 @@ const Publications = () => {
 
   console.log(Book);
 
-
+ // AOS Animation .........
+ useEffect(() => {
+  AOS.init();
+  AOS.refresh();
+}, []);
 
   return (
     <section>
@@ -38,10 +44,10 @@ const Publications = () => {
           </div>
           <div className="st-height-b50 st-height-lg-b50"></div>
 
-          <div className="lg:flex gap-3">
-            <div className="lg:basis-1/2 bg-[#101624]">
+          <div className="md:flex lg:flex gap-3">
+            <div className="md:basis-1/2 lg:basis-1/2 bg-[#101624]" data-aos="fade-up" data-aos-duration="500">
             {Book.map((book) => (
-              <div className="flex px-4 pt-4 pb-2 mb-2" key={book._id}>
+              <div className="flex px-4 pt-4 pb-2 mb-2" key={book._id} data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                 <div className="thumbnail basis-1/5">
                   <Image src={book.url} alt="quran" className="rounded-lg bookimg" width={100} height={200}></Image>
                 </div>
@@ -56,7 +62,7 @@ const Publications = () => {
               </div>
             ))}
             </div>
-            <div className="lg:basis-1/2	">
+            <div className="md:basis-1/2 lg:basis-1/2" data-aos="fade-up" data-aos-duration="800">
               <Image src={PubImg} alt="Publications" />
             </div>
           </div>
