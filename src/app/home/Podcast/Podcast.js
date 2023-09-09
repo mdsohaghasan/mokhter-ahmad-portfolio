@@ -54,7 +54,7 @@ const Podcast = () => {
 
   return (
     <section id="podcast ">
-      <div className="st-height-b100 st-height-lg-b80"></div>
+      <div className="h-0 md:h-0 lg:h-20"></div>
       <div className="container lg:px-5">
         <div className="lg:flex justify-center ">
           <div className="bg-[#101624] py-4 ">

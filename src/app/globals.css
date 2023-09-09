@@ -3312,7 +3312,7 @@ canvas {
 div#tsparticles {
   position: absolute;
   top: 0px;
-  height: inherit;
+  height: 100%;
 }
 
 .st-slider.st-style1 .slick-slide>div,
@@ -3444,3 +3444,5 @@ img.mark2 {
   margin-left: 27rem;
   margin-top: -4rem;
 }
+
+

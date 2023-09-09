@@ -45,9 +45,7 @@ const Header = () => {
 
   return (
     <section
-      id="tsparticles"
-      className=" flex  bg-[#070d1b]  relative  lg:h-[850px] sm:h-[300px]  "
-    >
+      id="tsparticles" className=" flex  bg-[#070d1b]  relative  lg:h-[850px] sm:h-[600px]">
       <Particles
         className="bg-image"
         id="tsparticles"
@@ -175,21 +173,21 @@ const Header = () => {
         }}
       /> 
 
-      <div className="container ">
-        <div className="lg:mt-32  sm:mt-3 ">
-          <div className="lg:ml-0 md:ml-10 sm:ml-5">
-            <h3 className="lg:text-3xl md:text-3xl	sm:text-3xl font-light text-[#fec544]" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Assalamu Alaikum, <br/>I am Professor </h3>
-            <h1 className="lg:text-9xl md:text-7xl  sm:text-4xl font-black" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-              Mokhter <br /> Ahmad
-            </h1>
-            <h2 className="lg:text-4xl md:text-3xl sm:text-2xl" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">Public Figure</h2>
-            <div className="flex my-6">
+
+  <div class="st-height-b80 st-height-lg-b80"></div>
+  <section class="container st-hero-wrap st-parallax">
+    <div class=" st-hero st-style1 st-ripple-version">
+      <div class="container">
+        <div class="">
+          <h3 className="text-3xl text-[#F6C544]" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Assalamu Alaikum, <br/>I am Professor</h3>
+          <h1 className="text-7xl md:text-9xl lg:text-9xl font-black" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">Mokhter <br /> Ahmad</h1>
+          <h2 className="text-4xl" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">Public Figure</h2>
+          <div className="flex my-6">
               <div className="st-hero-btn" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                 <Link
                   href="/about"
                   target="_blank"
-                  className="st-btn st-style1 st-color1 st-smooth-move"
-                >
+                  className="st-btn st-style1 st-color1 st-smooth-move">
                   Get About
                 </Link>
               </div>
@@ -201,67 +199,45 @@ const Header = () => {
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
-      {/* <!-- Hero Image - Social Link Group --> */}
-      <div className="hero-img-right ">
-        <Image src={photo} alt="Hero" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300"/>
-        <div className="st-social-group social-media  social-media-mobile" data-aos="fade-left" data-aos-duration="800" data-aos-delay="500">
-          <div className="st-social-link">
-            <Link
-              href="https://www.facebook.com/professormokhterahmad"
-              target="_blank"
-              className="st-social-btn active"
-            >
-              <span className="st-social-icon">
-                <i className="bi bi-facebook"></i>
-              </span>
-              <span className="st-icon-name">Facebook</span>
-            </Link>
-            <Link
-              href="https://www.youtube.com/@mokhterahmad"
-              target="_blank"
-              className="st-social-btn"
-            >
-              <span className="st-social-icon">
-                <i className="bi bi-youtube"></i>
-              </span>
-              <span className="st-icon-name">youtube</span>
-            </Link>
-            <Link
-              href="https://twitter.com/mokhterahmad"
-              target="_blank"
-              className="st-social-btn"
-            >
-              <span className="st-social-icon">
-                <i className="bi bi-twitter"></i>
-              </span>
-              <span className="st-icon-name">Twitter</span>
-            </Link>
-            <Link
-              href="https://www.instagram.com/mokhter.ahmad"
-              target="_blank"
-              className="st-social-btn"
-            >
-              <span className="st-social-icon">
-                <i className="bi bi-instagram"></i>
-              </span>
-              <span className="st-icon-name">Instagram</span>
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/mokhter-ahmad-b77ba257/?originalSubdomain=bd"
-              target="_blank"
-              className="st-social-btn"
-            >
-              <span className="st-social-icon">
-                <i className="bi bi-linkedin"></i>
-              </span>
-              <span className="st-icon-name">LinkedIn</span>
-            </Link>
-          </div>
+    </div>
+    {/* <!-- Hero Image - Social Link Group --> */}
+    <div class="st-hero-img st-to-right">
+      <Image class="wow fadeInRight md:hidden lg:block" src={photo} alt="Hero" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300"/>
+      <div class="st-social-group wow fadeInLeft md:hidden lg:block py-[12px]" data-aos="fade-left" data-aos-duration="800" data-aos-delay="500">
+        <div class="st-social-link">
+          <Link href="https://www.facebook.com/professormokhterahmad"
+              target="_blank" class="st-social-btn active" >
+            <span class="st-social-icon"><i className="bi bi-facebook"></i></span>
+            <span class="st-icon-name">Facebook</span>
+          </Link>
+          <Link href="https://www.youtube.com/@mokhterahmad"
+              target="_blank" class="st-social-btn">
+            <span class="st-social-icon">  <i className="bi bi-youtube"></i></span>
+            <span class="st-icon-name">Youtube</span>
+          </Link>
+          <Link href="https://twitter.com/mokhterahmad"
+              target="_blank" class="st-social-btn">
+            <span class="st-social-icon"><i className="bi bi-twitter"></i></span>
+            <span class="st-icon-name">Twitter</span>
+          </Link>
+          <Link href="https://www.instagram.com/mokhter.ahmad"
+              target="_blank" class="st-social-btn">
+            <span class="st-social-icon"><i className="bi bi-instagram"></i></span>
+            <span class="st-icon-name">Instagram</span>
+          </Link>
+          <Link  href="https://www.linkedin.com/in/mokhter-ahmad-b77ba257/?originalSubdomain=bd"
+              target="_blank" class="st-social-btn">
+            <span class="st-social-icon"><i className="bi bi-linkedin"></i></span>
+            <span class="st-icon-name">LinkedIn</span>
+          </Link>
         </div>
       </div>
+    </div>
+  </section>
+
+
     </section>
   );
 };
