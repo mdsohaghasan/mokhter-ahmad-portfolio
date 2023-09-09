@@ -7,7 +7,17 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 // Ripple Water Effect .....
 import $ from "jquery";
+import parse from 'html-react-parser';
+// import WaterWave from 'react-water-wave';
+import dynamic from 'next/dynamic';
 
+// water effect .........
+const WaterWave = dynamic(
+  () => {
+    return import('react-water-wave');
+  },
+  { ssr: false },
+);
 
 // Particles Depandency .....
 import { useCallback } from "react";
@@ -18,7 +28,6 @@ import Link from "next/link";
 const Header = () => {
   
   //  Social Button Hover .........
-        
   useEffect(() => {
     $(".st-social-btn").hover(function () {
       $(this).addClass("active").siblings().removeClass("active");
@@ -26,8 +35,7 @@ const Header = () => {
   }, []);
 
   
-    // Particles Function ....
-
+   // Particles Function ....
   const particlesInit = useCallback(async (engine) => {
     // console.log(engine);
     await loadFull(engine);
@@ -174,11 +182,19 @@ const Header = () => {
       /> 
 
 
-  <div class="st-height-b80 st-height-lg-b80"></div>
-  <section class="container st-hero-wrap st-parallax">
-    <div class=" st-hero st-style1 st-ripple-version">
-      <div class="container">
-        <div class="">
+{/* //// water effect ......... */}
+
+        <WaterWave className="cs-hero_bg cs-bg cs-ripple_version cs-center">
+          {() => (
+            <h1>Water Effect</h1>
+          )}
+        </WaterWave>
+
+  <div className="st-height-b80 st-height-lg-b80"></div>
+  <section className="container st-hero-wrap st-parallax">
+    <div className=" st-hero st-style1 st-ripple-version">
+      <div className="container">
+        <div className="">
           <h3 className="text-3xl text-[#F6C544]" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Assalamu Alaikum, <br/>I am Professor</h3>
           <h1 className="text-7xl md:text-9xl lg:text-9xl font-black" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">Mokhter <br /> Ahmad</h1>
           <h2 className="text-4xl" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">Public Figure</h2>
@@ -203,34 +219,34 @@ const Header = () => {
       </div>
     </div>
     {/* <!-- Hero Image - Social Link Group --> */}
-    <div class="st-hero-img st-to-right">
-      <Image class="wow fadeInRight md:hidden lg:block" src={photo} alt="Hero" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300"/>
-      <div class="st-social-group wow fadeInLeft md:hidden lg:block py-[12px]" data-aos="fade-left" data-aos-duration="800" data-aos-delay="500">
-        <div class="st-social-link">
+    <div className="st-hero-img st-to-right">
+      <Image className="wow fadeInRight md:hidden lg:block" src={photo} alt="Hero" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300"/>
+      <div className="st-social-group wow fadeInLeft md:hidden lg:block py-[12px]" data-aos="fade-left" data-aos-duration="800" data-aos-delay="500">
+        <div className="st-social-link">
           <Link href="https://www.facebook.com/professormokhterahmad"
-              target="_blank" class="st-social-btn active" >
-            <span class="st-social-icon"><i className="bi bi-facebook"></i></span>
-            <span class="st-icon-name">Facebook</span>
+              target="_blank" className="st-social-btn active" >
+            <span className="st-social-icon"><i className="bi bi-facebook"></i></span>
+            <span className="st-icon-name">Facebook</span>
           </Link>
           <Link href="https://www.youtube.com/@mokhterahmad"
-              target="_blank" class="st-social-btn">
-            <span class="st-social-icon">  <i className="bi bi-youtube"></i></span>
-            <span class="st-icon-name">Youtube</span>
+              target="_blank" className="st-social-btn">
+            <span className="st-social-icon">  <i className="bi bi-youtube"></i></span>
+            <span className="st-icon-name">Youtube</span>
           </Link>
           <Link href="https://twitter.com/mokhterahmad"
-              target="_blank" class="st-social-btn">
-            <span class="st-social-icon"><i className="bi bi-twitter"></i></span>
-            <span class="st-icon-name">Twitter</span>
+              target="_blank" className="st-social-btn">
+            <span className="st-social-icon"><i className="bi bi-twitter"></i></span>
+            <span className="st-icon-name">Twitter</span>
           </Link>
           <Link href="https://www.instagram.com/mokhter.ahmad"
-              target="_blank" class="st-social-btn">
-            <span class="st-social-icon"><i className="bi bi-instagram"></i></span>
-            <span class="st-icon-name">Instagram</span>
+              target="_blank" className="st-social-btn">
+            <span className="st-social-icon"><i className="bi bi-instagram"></i></span>
+            <span className="st-icon-name">Instagram</span>
           </Link>
           <Link  href="https://www.linkedin.com/in/mokhter-ahmad-b77ba257/?originalSubdomain=bd"
-              target="_blank" class="st-social-btn">
-            <span class="st-social-icon"><i className="bi bi-linkedin"></i></span>
-            <span class="st-icon-name">LinkedIn</span>
+              target="_blank" className="st-social-btn">
+            <span className="st-social-icon"><i className="bi bi-linkedin"></i></span>
+            <span className="st-icon-name">LinkedIn</span>
           </Link>
         </div>
       </div>
@@ -243,3 +259,19 @@ const Header = () => {
 };
 
 export default Header;
+
+
+
+{/* <WaterWave
+        className="cs-hero_bg cs-bg cs-ripple_version cs-center"
+        imageUrl={bgImageUrl}
+      >
+        {() => (
+          <div className="container">
+            <div className="cs-hero_text text-center">
+              <h1 className="cs-hero_title">{parse(title)}</h1>
+              <button btnLink={btnLink} btnText={btnText} />
+            </div>
+          </div>
+        )}
+      </WaterWave> */}
