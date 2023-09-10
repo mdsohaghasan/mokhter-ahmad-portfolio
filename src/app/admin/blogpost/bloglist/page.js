@@ -70,7 +70,6 @@ const handleDelete = (id) => {
       }
 };
 
- 
 
   return (
     <section className="container">
@@ -91,7 +90,7 @@ const handleDelete = (id) => {
               <p className="text-justify">{post.des}</p>
               <p> Author : {post.author}</p>
               <p> Date : {post.date}</p>             
-              <button className="px-3 py-2 mr-3 mb-2 bg-green-300 rounded-lg text-slate-800"><Link href={`/admin/blogpost/bloglist/${post._id}`} target="_blank">Update Post</Link></button>
+              <button className="px-3 py-2 mr-3 mb-2 bg-green-300 rounded-lg text-slate-800"><Link href={`/admin/blogpost/${post._id}`} target="_blank">Update Post</Link></button>
               <button className="px-3 py-2  sm:mx-3 bg-red-300 rounded-lg text-slate-800" onClick={() => handleDelete(post._id)}>Delete Post</button>
             </div>
           </div>
