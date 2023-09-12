@@ -8,13 +8,13 @@ async function main() {
         const outDir = path.join(process.cwd(), "/out");
 
         await new FtpDeploy().deploy({
-            user: 'tarbiyah@mokhterahmad.info', // Your credentials
-            password: '&s9{DrLBwkPU', // Your credentials
-            host: 'ftp.mokhterahmad.info', // Your credentials
+            user: 'mokhter@sir.tarbiyahonline.com', // Your credentials
+            password: 'g.+PhvG?wP}V', // Your credentials
+            host: 'ftp.madrasatuttarbiah.com', // Your credentials
             port: 21, // Your credentials
 
             localRoot: outDir, // Location of build files in project
-            remoteRoot: "/mokhterahmad.info", // Upload location on remote, replace with subfolder on FTP-server if required
+            remoteRoot: "/sir.tarbiyahonline.com", // Upload location on remote, replace with subfolder on FTP-server if required
 
             include: ["", "**/"], // Upload all files from build folder
             exclude: [], // Exclude no files
