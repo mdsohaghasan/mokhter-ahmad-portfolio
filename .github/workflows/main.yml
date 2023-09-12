@@ -1,19 +1,27 @@
-name: Node.js CI
+name: Build
 
 on:
-  pull_request:
-    branches: [ master ]
+  push:
+    branches:
+      - "**"
+
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 16.x
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16.x
-    - run: npm i
-    - run: npm run build --if-present
-    - run: npm test
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Lint
+        run: yarn run lint
