@@ -25,4 +25,5 @@ jobs:
         username: ${{ secrets.ftp_USERNAME }}
         password: ${{ secrets.ftp_PASSWORD }}
         port: ${{ secrets.FTP_PORT }}
+        server-dir: /sir.tarbiyahonline.com/
         
