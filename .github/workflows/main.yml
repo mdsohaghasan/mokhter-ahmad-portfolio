@@ -1,39 +1,27 @@
-name: 🚀 Deploy File to cPanel
+name: Build
+
 on:
   push:
     branches:
-      - master
+      - "**"
+
+  workflow_dispatch:
+
 jobs:
-  FTP-Deploy-Action:
-    name: 🎉 Deploy
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
 
-      - name: Use Node.js 16
-        uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v2
         with:
-          node-version: '16.x'
+          node-version: 16.x
 
-      - name: Cache npm dependencies
-        uses: actions/cache@v3
-        id: cache-node-modules
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        run: yarn install
 
-      - name: 🔨 Install Dependencies
-        if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: |
-          npm install
-          git reset --hard
-      - name: 📂 Sync folders and files to the server
-        uses: SamKirkland/FTP-Deploy-Action@4.3.3
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+      - name: Lint
+        run: yarn run lint
