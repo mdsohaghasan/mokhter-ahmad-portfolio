@@ -6,10 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": "next build && next export && node ./scripts/deploy.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "@flaticon/flaticon-uicons": "^2.2.0",
