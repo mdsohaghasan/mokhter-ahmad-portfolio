@@ -1,27 +1,31 @@
-name: Build
-
-on:
-  push:
-    branches:
-      - "**"
-
-  workflow_dispatch:
-
+on: 
+    push: 
+        branches : 
+            - master
+name: 🚀 Deploy website on push
 jobs:
-  build:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
+    - name: Use Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+      
+    - name: 🔨 Build Project
+      run: |
+        npm install
+        npm run build
+        npm run deploy
 
-      - name: Install dependencies
-        run: yarn install
-
-      - name: Lint
-        run: yarn run lint 
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: /mokhterahmad.info/
